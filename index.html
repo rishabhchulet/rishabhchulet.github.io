@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<script>try{var t=localStorage.getItem('creet-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <title>Creet – small tools for CAs and truck dispatchers</title>
 <meta name="description" content="Creet makes small, focused tools: a GSTR-2B reconciliation add-on for Google Sheets and an Income Tax portal extension for chartered accountants in India, and a Chrome side panel for US truck dispatchers.">
 <meta property="og:type" content="website">
@@ -27,6 +28,7 @@
       <a href="#tools">Tools</a>
       <a href="#how">How they work</a>
       <a href="#contact">Contact</a>
+      <button class="theme-toggle" type="button" aria-label="Switch colour theme"><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5V5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
     </nav>
   </div>
 </header>
@@ -83,7 +85,7 @@
           <div><dt>For</dt><dd>CAs in India</dd></div>
           <div><dt>Runs in</dt><dd>Google Sheets</dd></div>
           <div><dt>Free plan</dt><dd>200 invoices a month</dd></div>
-          <div><dt>Pro</dt><dd>₹999 a year</dd></div>
+          <div><dt>Pro</dt><dd data-price data-inr="999" data-unit=" a year">₹999 a year</dd></div>
         </dl>
       </li>
       <li class="tool tool-pink" id="itr-desk">
@@ -94,7 +96,7 @@
           <div><dt>For</dt><dd>CAs in India</dd></div>
           <div><dt>Runs in</dt><dd>Chrome side panel</dd></div>
           <div><dt>Free plan</dt><dd>5 clients</dd></div>
-          <div><dt>Pro</dt><dd>₹999 a year, $29 abroad</dd></div>
+          <div><dt>Pro</dt><dd data-price data-inr="999" data-usd="29" data-unit=" a year">₹999 a year, $29 outside India</dd></div>
         </dl>
       </li>
       <li class="tool tool-green" id="dispatch-desk">
@@ -105,10 +107,11 @@
           <div><dt>For</dt><dd>US truck dispatchers</dd></div>
           <div><dt>Runs in</dt><dd>Chrome side panel</dd></div>
           <div><dt>Free plan</dt><dd>1 carrier profile</dd></div>
-          <div><dt>Pro</dt><dd>$19 a month, $149 a year</dd></div>
+          <div><dt>Pro</dt><dd><span data-price data-usd="19" data-unit=" a month">$19 a month</span>, <span data-price data-usd="149" data-unit=" a year">$149 a year</span></dd></div>
         </dl>
       </li>
     </ul>
+    <p class="note" data-price-note hidden></p>
   </section>
 
   <section id="how" class="section wrap">
@@ -167,5 +170,7 @@ document.getElementById('y').textContent = new Date().getFullYear();
   }, { threshold: 0.5 }).observe(sheets);
 })();
 </script>
+<script src="theme.js"></script>
+<script src="prices.js"></script>
 </body>
 </html>
