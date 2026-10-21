@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<script>try{var t=localStorage.getItem('creet-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <title>GSTR-2B Reconciler – GSTR-2B reconciliation in Google Sheets</title>
 <meta name="description" content="A Google Sheets add-on for chartered accountants and GST practitioners in India. Reconcile the GST portal's GSTR-2B with a client's purchase register and see matched, mismatched and missing invoices and claimable ITC by supplier GSTIN. Your data stays in your spreadsheet.">
 <meta property="og:type" content="website">
@@ -33,6 +34,7 @@
       <a href="#data">Your data</a>
       <a href="#faq">FAQ</a>
       <a href="privacy.html">Privacy</a>
+      <button class="theme-toggle" type="button" aria-label="Switch colour theme"><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5V5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
     </nav>
   </div>
 </header>
@@ -109,7 +111,7 @@
     <div class="plans">
       <div class="plan">
         <h3>Free</h3>
-        <p class="price">₹0</p>
+        <p class="price"><span data-price data-inr="0">₹0</span></p>
         <ul class="feat">
           <li>Up to 200 invoices a month</li>
           <li>Every matching rule and every result tab</li>
@@ -119,7 +121,7 @@
       </div>
       <div class="plan plan-pro">
         <h3>Pro <span class="pill">14-day money-back</span></h3>
-        <p class="price">₹999 <small>/ year</small></p>
+        <p class="price"><span data-price data-inr="999">₹999</span> <small>/ year</small></p>
         <ul class="feat">
           <li>Unlimited invoices</li>
           <li>Everything in Free</li>
@@ -131,6 +133,7 @@
         <p class="note">Payments are processed by Dodo Payments (merchant of record). You receive a licence key by email; paste it into Extensions → GSTR-2B Reconciler → Licence and plan.</p>
       </div>
     </div>
+    <p class="note" data-price-note hidden></p>
     <p class="note">How invoices are counted: each row of the result counts once. A matched or mismatched pair is one, and each unmatched invoice on either side is one. Credit and debit notes count like invoices. The count resets on the 1st of every month (Indian time). A run that would cross 200 is stopped before anything is written.</p>
   </section>
 
@@ -190,5 +193,7 @@
   </div>
 </footer>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script src="../theme.js"></script>
+<script src="../prices.js"></script>
 </body>
 </html>
