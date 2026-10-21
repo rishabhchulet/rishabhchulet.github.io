@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<script>try{var t=localStorage.getItem('creet-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<title>Resource Lens – PhpStorm plugin</title>
+<meta name="description" content="Resource Lens is a free PhpStorm plugin that completes, links and checks Eloquent model attribute names in Laravel admin panel resources.">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Courier+Prime&display=swap">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="lens.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="wrap">
+  <div class="head-row">
+    <div class="brand">
+      <a class="mark" href="../"><img src="../icon.svg" alt="" width="30" height="30">Creet</a>
+      <span class="sep" aria-hidden="true">/</span>
+      <a class="product" href="./"><img src="icon.svg" alt="" width="24" height="24">Resource Lens</a>
+    </div>
+    <nav class="site-nav" aria-label="Main">
+      <a href="./" aria-current="page">Overview</a>
+      <a href="eula.html">EULA</a>
+      <a href="privacy.html">Privacy</a>
+      <button class="theme-toggle" type="button" aria-label="Switch colour theme"><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5V5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="product-hero wrap">
+    <div>
+      <p class="kind"><span class="sw sw-teal"></span>Free PhpStorm plugin</p>
+      <h1 class="ruled">Model attribute names that are right the first time.</h1>
+      <p class="lead">Resource Lens completes, links and checks Eloquent model attribute names in Laravel admin panel resources built with Filament 4 and 5. It reads your migrations and model classes inside PhpStorm, so a column name typed by you or written by an AI assistant is checked against the model before you open the browser.</p>
+      <p class="actions">
+        <a class="btn btn-primary" href="#install">Install in PhpStorm</a>
+        <a class="btn" href="#silent">When it stays silent</a>
+      </p>
+    </div>
+
+    <figure>
+      <div class="code-frame">
+        <div class="code-bar"><b>PostsTable.php</b> app/Filament/Resources/Posts/Tables</div>
+<pre>return $table-&gt;columns([
+    TextColumn::make('title'),
+    TextColumn::make('author.<span class="squiggle">full_name</span>'),
+    TextColumn::make('created_at'),
+]);</pre>
+        <p class="code-tip"><b>Warning</b> Unknown attribute 'full_name' on App\Models\User</p>
+      </div>
+      <figcaption>The <code>users</code> table has <code>name</code>, not <code>full_name</code>. The <code>author</code> segment is fine: it is a relationship on <code>Post</code>.</figcaption>
+    </figure>
+  </section>
+
+  <section id="features" class="section wrap">
+    <div class="section-head">
+      <h2>What the plugin does</h2>
+      <p>Four features, all read from your own project's code. No setup, no server, no account.</p>
+    </div>
+    <dl class="spec">
+      <div><dt>Completion</dt><dd>Model attributes and relationships inside <code>TextInput::make('…')</code>, <code>TextColumn::make('…')</code>, <code>Select::make('…')</code> and the other form field, table column, infolist entry and filter constructors. It completes the first segment of a dotted name.</dd></div>
+      <div><dt>Go to declaration</dt><dd>Ctrl-click (Cmd-click on macOS) a name to jump to where it is declared: the migration column, <code>@property</code> tag, cast, fillable or <code>$appends</code> entry, accessor, or relationship method.</dd></div>
+      <div><dt>Unknown attribute warning</dt><dd>On core table columns and infolist entries whose name matches no attribute or relationship of the model, checking every segment of a path such as <code>author.name</code>. It stays silent whenever it cannot be certain (see below).</dd></div>
+      <div><dt>Rename and gutter links</dt><dd>Renaming an accessor or relationship method updates the <code>make('…')</code> names that use it. A gutter icon links each Resource to its model and each model back to its Resources.</dd></div>
+    </dl>
+  </section>
+
+  <section id="install" class="section wrap">
+    <div class="section-head">
+      <h2>Install</h2>
+      <p>PhpStorm 2025.3 or newer, on a Laravel project with Filament 4 or 5.</p>
+    </div>
+    <ol class="steps">
+      <li><h3>Open Plugins</h3><p>In PhpStorm, open Settings (Preferences on macOS) and choose Plugins, then the Marketplace tab.</p></li>
+      <li><h3>Search</h3><p>Search for "Resource Lens", click Install, and restart the IDE if it asks.</p></li>
+      <li><h3>Open a Resource</h3><p>Open a Resource, form schema or table class and press Ctrl+Space inside a <code>make('')</code> string.</p></li>
+    </ol>
+    <p class="note">The gutter icon can be switched off in Settings | Editor | General | Gutter Icons, and the warning in Settings | Editor | Inspections | Resource Lens.</p>
+  </section>
+
+  <section id="silent" class="section wrap">
+    <div class="section-head">
+      <h2>When the warning stays silent</h2>
+      <p>A wrong warning on correct code teaches people to switch the check off, so Resource Lens says nothing unless it is certain.</p>
+    </div>
+    <p>The warning checks these classes exactly (not subclasses): <code>TextColumn</code>, <code>IconColumn</code>, <code>ImageColumn</code>, <code>ColorColumn</code>, <code>ToggleColumn</code>, <code>TextInputColumn</code>, <code>SelectColumn</code>, <code>CheckboxColumn</code>, <code>TextEntry</code>, <code>IconEntry</code>, <code>ImageEntry</code>, <code>ColorEntry</code> and <code>KeyValueEntry</code>. It says nothing when:</p>
+    <ul class="silent">
+      <li>The component is a form field or a filter (virtual fields such as <code>password_confirmation</code> are legitimate), or a subclass or plugin column.</li>
+      <li>The chain after <code>make()</code> gives the state another source: <code>state</code>, <code>getStateUsing</code>, <code>counts</code>, <code>exists</code>, <code>avg</code>, <code>sum</code>, <code>min</code>, <code>max</code>, <code>view</code>, <code>rowIndex</code>, <code>default</code>, <code>placeholder</code>.</li>
+      <li>The name ends in <code>_count</code> or <code>_exists</code>, or is not a plain dotted name.</li>
+      <li>The component sits inside a repeater, a Builder block, a filter's schema, <code>->relationship()</code>, <code>->statePath()</code>, <code>->record()</code>, <code>->model()</code>, <code>->records()</code>, or a table with its own <code>->query()</code>.</li>
+      <li>The table calls <code>modifyQueryUsing</code>, or the Resource or one of its parent classes declares <code>getEloquentQuery</code>.</li>
+      <li>The component is built outside a <code>columns()</code>, <code>components()</code> or <code>schema()</code> array.</li>
+      <li>The model cannot be resolved with certainty, or a class other than a Resource (a relation manager, a Livewire component) also configures the table or schema.</li>
+      <li>The model's columns are not fully known: its migrations use macros, helpers, computed Blueprint methods or raw SQL. Docblock <code>@property</code> tags add names to completion but never make the column list complete.</li>
+    </ul>
+    <p class="note">Migrations are read from every <code>database/migrations</code> directory in the project, except under <code>vendor/</code>. Duplicate model classes written by laravel-ide-helper are ignored.</p>
+  </section>
+
+  <section id="privacy" class="section wrap">
+    <div class="section-head">
+      <h2>Your code stays on your machine</h2>
+      <p>Resource Lens collects no data and makes no network calls. See the <a href="privacy.html">privacy note</a> and the <a href="eula.html">licence agreement</a>.</p>
+    </div>
+    <p class="note">Resource Lens is an independent project by Creet. It is not affiliated with or endorsed by Filament, Laravel or JetBrains. PhpStorm is a trademark of JetBrains s.r.o.; Filament and Laravel are trademarks of their respective owners. Questions and bug reports: <a href="mailto:support@creet.in">support@creet.in</a>.</p>
+  </section>
+</main>
+
+<footer class="wrap">
+  <div class="foot-row">
+    <p>© 2026 Resource Lens, made by <a href="../">Creet</a></p>
+    <nav aria-label="Legal">
+      <a href="eula.html">EULA</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="mailto:support@creet.in">support@creet.in</a>
+    </nav>
+  </div>
+</footer>
+<script src="../theme.js"></script>
+</body>
+</html>

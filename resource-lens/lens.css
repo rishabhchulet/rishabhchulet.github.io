@@ -1,0 +1,23 @@
+/* Resource Lens pages: the shared styles.css plus this tool's carbon colour (teal) and the code sample. */
+:root{
+  --teal:#c8ebe5;--teal-mark:#0e8f7e;--copy-teal:#c8ebe5;
+  --code-bg:#f6f8fb;--warn:#b7791f;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--teal:#163a36;--teal-mark:#33c7b2;--copy-teal:#2a6058;--code-bg:#1e2227;--warn:#f0b45a}
+}
+:root[data-theme="dark"]{--teal:#163a36;--teal-mark:#33c7b2;--copy-teal:#2a6058;--code-bg:#1e2227;--warn:#f0b45a}
+
+.sw-teal{background:var(--teal-mark)}
+.legal .notice{background:var(--teal)}
+.code-frame{border:1.5px solid var(--ink);border-radius:4px;background:var(--code-bg);overflow:hidden;box-shadow:10px 10px 0 var(--copy-teal)}
+.code-bar{padding:9px 14px;border-bottom:1px solid var(--rule);font-size:13px;color:var(--ink-soft)}
+.code-bar b{color:var(--ink);font-weight:600}
+.code-frame pre{margin:0;padding:16px 18px;overflow-x:auto;font:14px/1.7 var(--typed);color:var(--ink)}
+.code-frame .squiggle{text-decoration:underline wavy var(--warn);text-underline-offset:4px}
+.code-tip{margin:0;padding:10px 14px;border-top:1px solid var(--rule);font-size:14px;color:var(--ink-soft)}
+.code-tip b{color:var(--warn);font-weight:700}
+figure{margin:0}
+figcaption{margin-top:18px;font-size:14px;color:var(--ink-soft)}
+.silent{columns:2 22em;column-gap:48px;padding-left:1.2em;color:var(--ink-soft)}
+.silent li{margin:0 0 10px;break-inside:avoid}

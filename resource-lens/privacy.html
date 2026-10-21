@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<script>try{var t=localStorage.getItem('creet-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<title>Privacy – Resource Lens</title>
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Courier+Prime&display=swap">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="lens.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="wrap">
+  <div class="head-row">
+    <div class="brand">
+      <a class="mark" href="../"><img src="../icon.svg" alt="" width="30" height="30">Creet</a>
+      <span class="sep" aria-hidden="true">/</span>
+      <a class="product" href="./"><img src="icon.svg" alt="" width="24" height="24">Resource Lens</a>
+    </div>
+    <nav class="site-nav" aria-label="Main">
+      <a href="./">Overview</a>
+      <a href="eula.html">EULA</a>
+      <a href="privacy.html" aria-current="page">Privacy</a>
+      <button class="theme-toggle" type="button" aria-label="Switch colour theme"><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5V5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+<article class="legal">
+
+  <h1>Privacy</h1>
+  <p class="updated">Last updated: 21 October 2026. Applies to Resource Lens 0.1.</p>
+
+  <p class="notice"><strong>In short:</strong> Resource Lens collects no data. It reads your project's files inside your IDE, keeps what it learns in the IDE's memory and caches, and makes no network calls of any kind. The Developer never receives your code or anything about how you use the plugin.</p>
+
+  <h2>Who we are</h2>
+  <p>Resource Lens ("the Plugin") is a plugin for PhpStorm and other JetBrains IDEs with PHP support. It is made by Rishabh Chulet, an independent developer in India trading as Creet ("the Developer", "we", "us").</p>
+
+  <h2>What the Plugin reads</h2>
+  <p>To complete, link and check attribute names, the Plugin reads, inside your IDE and only in the project you have open:</p>
+  <ul>
+    <li>Laravel migration files under <code>database/migrations</code> directories (not under <code>vendor/</code>), to learn each table's columns;</li>
+    <li>Eloquent model classes, to learn their casts, fillable and appended attributes, accessors, relationships and <code>@property</code> tags;</li>
+    <li>admin panel Resource, form schema, table and infolist classes, to find the model each one uses.</li>
+  </ul>
+  <p>It reads these through the IDE's own code index. It does not run your code, connect to your database or read environment files.</p>
+
+  <h2>What the Plugin stores</h2>
+  <p>Nothing outside the IDE. What it learns from your files is kept in the IDE's memory and caches while the project is open, and is rebuilt from your files when they change. The Plugin has no settings of its own; the IDE stores your choice to switch its warning or gutter icon off, in your IDE settings, as it does for any inspection or gutter icon.</p>
+
+  <h2>What the Plugin sends</h2>
+  <p>Nothing. The Plugin makes no network connections: no analytics, no telemetry, no crash reporting, no licence checks, no update checks of its own and no AI services. It contains no error reporter, so if the IDE shows an error that comes from the Plugin, nothing reaches us unless you choose to email it.</p>
+
+  <h2>What others collect</h2>
+  <ul>
+    <li><strong>JetBrains:</strong> when you install or update the Plugin from the JetBrains Marketplace, JetBrains processes that download under its own privacy policy, and shows the Developer aggregate download and install counts, not who you are. If you write a review on the Marketplace, your review and the name on your JetBrains account are public there. Your IDE's own usage statistics and error reports, if you have enabled them, are governed by JetBrains' policies. See <a href="https://www.jetbrains.com/legal/docs/privacy/privacy/" rel="noopener">JetBrains' privacy policy</a>.</li>
+    <li><strong>Email support:</strong> if you write to <a href="mailto:support@creet.in">support@creet.in</a>, we receive your email address and whatever you include, and use it only to answer you. Please do not send code you are not allowed to share.</li>
+  </ul>
+
+  <h2>Retention and deletion</h2>
+  <p>The Plugin keeps nothing that needs deleting: uninstalling it from Settings | Plugins removes it, and the IDE discards its caches. Support emails are kept for as long as needed to help you and are deleted on request.</p>
+
+  <h2>Children</h2>
+  <p>Resource Lens is a developer tool and is not directed at children.</p>
+
+  <h2>Changes</h2>
+  <p>If a future version of the Plugin ever needs to send or store data, this page will say so with a new date before that version is released, and the plugin's change notes will mention it.</p>
+
+  <h2>Contact</h2>
+  <p>Developer: Rishabh Chulet (Creet)<br>
+  Address: Madhya Pradesh, India<br>
+  Email: <a href="mailto:support@creet.in">support@creet.in</a></p>
+
+</article>
+</main>
+
+<footer class="wrap">
+  <div class="foot-row">
+    <p>© 2026 Resource Lens, made by <a href="../">Creet</a></p>
+    <nav aria-label="Legal">
+      <a href="eula.html">EULA</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="mailto:support@creet.in">support@creet.in</a>
+    </nav>
+  </div>
+</footer>
+<script src="../theme.js"></script>
+</body>
+</html>
