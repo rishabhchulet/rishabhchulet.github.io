@@ -9,6 +9,7 @@ deploys it.
 | `index.html`, `icon.svg` | Home page listing the three products, and the Creet icon |
 | `styles.css` | Shared stylesheet for every page, including `gstr2b/` (linked as `../styles.css`) |
 | `gstr2b/` | GSTR-2B Reconciler: home, privacy, terms, refunds, post-purchase page |
+| `resource-lens/` | Resource Lens (PhpStorm plugin): overview, EULA, privacy; `lens.css` adds its teal carbon colour. Its Marketplace listing uses `https://creet.in/resource-lens/` (website), `.../eula.html` (licence) and `.../privacy.html` |
 | `CNAME` | `creet.in`, so GitHub Pages serves the site on the custom domain |
 | `.nojekyll` | Serve files as they are (no Jekyll processing) |
 
