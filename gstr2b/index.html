@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GSTR-2B Reconciler – GSTR-2B reconciliation in Google Sheets</title>
+<meta name="description" content="A Google Sheets add-on for chartered accountants and GST practitioners in India. Reconcile the GST portal's GSTR-2B with a client's purchase register and see matched, mismatched and missing invoices and claimable ITC by supplier GSTIN. Your data stays in your spreadsheet.">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="nav">
+    <a class="brand" href="./"><img src="icon.svg" alt="">GSTR-2B Reconciler</a>
+    <nav><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#data">Your data</a><a href="#faq">FAQ</a><a href="privacy.html">Privacy</a></nav>
+  </header>
+
+  <section class="hero">
+    <span class="tag">Google Sheets add-on · India</span>
+    <h1>Reconcile GSTR-2B with the purchase register, inside Google Sheets.</h1>
+    <p>GSTR-2B Reconciler is a Google Sheets add-on for chartered accountants and GST practitioners. Import the GSTR-2B Excel from the GST portal and the client's purchase register into one spreadsheet, click Reconcile, and get matched, mismatched and missing invoices with claimable ITC for every supplier GSTIN. No macros, no VBA, no Windows.</p>
+    <!-- When the Marketplace listing is live, point the two install buttons at it and change their text to "Get it for Google Sheets, free". -->
+    <a class="btn primary" id="installBtn" href="#features">Coming soon to Google Workspace Marketplace</a>
+    <a class="btn" href="#pricing">See Pro</a>
+  </section>
+
+  <section id="features">
+    <h2>What the add-on does</h2>
+    <div class="grid">
+      <div class="card"><h3>Exact and fuzzy matching</h3><p>Matches on supplier GSTIN, invoice number, date and taxable value. Catches what macros miss: <code>INV/0045/26-27</code> = <code>inv-45-26-27</code>, dates within 3 days, amounts within ₹1. Both tolerances are adjustable.</p></div>
+      <div class="card"><h3>Mismatches with the reason</h3><p>The same invoice with a different value, date or tax, tax under the wrong head (IGST in 2B, CGST + SGST in the books), or a GSTIN typo in the books, each with the reason spelt out.</p></div>
+      <div class="card"><h3>Missing on either side</h3><p>Missing in 2B: hold the ITC and chase the supplier. Missing in books: check receipt, then record it. Duplicate entries in the books are flagged.</p></div>
+      <div class="card"><h3>ITC summary by supplier</h3><p>Head-wise totals (IGST, CGST, SGST/UTGST, cess), ITC as per 2B and as per books, claimable ITC and ITC at risk for every supplier GSTIN.</p></div>
+      <div class="card"><h3>Notes and amendments</h3><p>Reads the portal's B2B, B2BA, B2B-CDNR and B2B-CDNRA tabs, including the two- and three-row headers. Credit notes count negative in every ITC total.</p></div>
+      <div class="card"><h3>Remembers each client</h3><p>The column mapping is saved in each client's spreadsheet, so next month is one click. Every run is logged in a Recon history tab.</p></div>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2>How it works</h2>
+    <div class="grid">
+      <div class="card"><h3>1. Import the 2B</h3><p>Download the GSTR-2B Excel from the GST portal and import it into a Google Sheet (File → Import → Insert new sheet(s)).</p></div>
+      <div class="card"><h3>2. Add the purchase register</h3><p>From Tally, Busy, Zoho or your own format, as another tab in the same spreadsheet.</p></div>
+      <div class="card"><h3>3. Reconcile</h3><p>Extensions → GSTR-2B Reconciler → Reconcile GSTR-2B. Confirm the columns in the sidebar and click Reconcile. The result tabs are written into the same spreadsheet.</p></div>
+    </div>
+    <p class="notice">The add-on writes six tabs: Summary, Matched, Mismatched, Missing in 2B, Missing in books and Recon history. Each run replaces the add-on's own result tabs; your source tabs are never changed.</p>
+  </section>
+
+  <section id="pricing">
+    <h2>Pricing</h2>
+    <div class="pricing">
+      <div class="card">
+        <h3>Free</h3>
+        <div class="price">₹0</div>
+        <ul class="feat">
+          <li>Up to 200 invoices a month</li>
+          <li>Every matching rule and every result tab</li>
+          <li>Column mapping saved per client</li>
+          <li>Re-running the same 2B in the same month is not counted again</li>
+        </ul>
+      </div>
+      <div class="card" style="border-color:var(--accent)">
+        <h3>Pro <span class="tag">14-day money-back</span></h3>
+        <div class="price">₹999 <small>/ year</small></div>
+        <ul class="feat">
+          <li>Unlimited invoices</li>
+          <li>Everything in Free</li>
+          <li>One licence key works in every spreadsheet you open with your Google account</li>
+          <li>Email support</li>
+        </ul>
+        <!-- After checkout Dodo sends buyers to creet.in/gstr2b/thanks.html. -->
+        <p style="margin-top:14px"><a class="btn primary" id="buyBtn" href="https://checkout.dodopayments.com/buy/pdt_0NqCfxYkhZ7iUxmBDYSje?quantity=1&amp;redirect_url=https%3A%2F%2Fcreet.in%2Fgstr2b%2Fthanks.html" rel="noopener">Buy Pro</a></p>
+        <p class="notice" style="margin-top:12px">Payments are processed by Dodo Payments (merchant of record). You receive a licence key by email; paste it into Extensions → GSTR-2B Reconciler → Licence and plan.</p>
+      </div>
+    </div>
+    <p class="notice" style="margin-top:16px">How invoices are counted: each row of the result counts once. A matched or mismatched pair is one, and each unmatched invoice on either side is one. Credit and debit notes count like invoices. The count resets on the 1st of every month (Indian time). A run that would cross 200 is stopped before anything is written.</p>
+  </section>
+
+  <section id="data">
+    <h2>Your data and the permissions it asks for</h2>
+    <p>Your client data stays in your spreadsheet. The add-on runs on Google's own Apps Script servers and has no server of its own. On first use Google asks you to allow three permissions:</p>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Permission</th><th>Why the add-on needs it</th></tr>
+        <tr><td>View and manage spreadsheets that this application has been installed in<br><code>spreadsheets.currentonly</code></td><td>To read the GSTR-2B and purchase-register tabs you pick and to write the result tabs, in the spreadsheet the add-on is opened in. It cannot open any other file in your Google Drive.</td></tr>
+        <tr><td>Display and run third-party web content in prompts and sidebars inside Google applications<br><code>script.container.ui</code></td><td>To show the add-on's sidebar inside Google Sheets.</td></tr>
+        <tr><td>Connect to an external service<br><code>script.external_request</code></td><td>Only to activate and re-check a Pro licence key with Dodo Payments, our payment provider: once when you activate, then at most once a week, or when you click Check again. The request carries the licence key and a fixed product name, nothing from your spreadsheet. On the free plan this permission is never used.</td></tr>
+      </table>
+    </div>
+    <p>The add-on does not ask for your name, email address, contacts, Gmail or Drive. Full details are in the <a href="privacy.html">Privacy Policy</a>.</p>
+  </section>
+
+  <section id="install">
+    <h2>Install</h2>
+    <p>GSTR-2B Reconciler is free on the Google Workspace Marketplace. In any Google Sheet, open Extensions → Add-ons → Get add-ons, search for "GSTR-2B Reconciler" and click Install, or use the button below. Then open a spreadsheet and choose Extensions → GSTR-2B Reconciler → Reconcile GSTR-2B.</p>
+    <p class="notice">Tip: set File → Settings → Locale to India so dd-mm-yyyy dates read correctly, and untick "Convert text to numbers, dates, and formulas" when importing so invoice numbers like 00123 stay intact.</p>
+    <p style="margin-top:14px"><a class="btn primary" href="#features">Coming soon to Google Workspace Marketplace</a></p>
+  </section>
+
+  <section id="faq">
+    <h2>FAQ</h2>
+    <div class="grid">
+      <div class="card"><h3>Does my client data leave Google?</h3><p>No. Invoices, GSTINs and amounts are read and written inside Google Sheets only. The single outside call is the Pro licence check, which sends your licence key to Dodo Payments and nothing else.</p></div>
+      <div class="card"><h3>Can it see my other files?</h3><p>No. It only has access to the spreadsheet it is opened in, and only while you use it there.</p></div>
+      <div class="card"><h3>Does it log in to the GST portal or file anything?</h3><p>No. You download the GSTR-2B yourself. The add-on never connects to the GST portal and never files, accepts or rejects anything in IMS.</p></div>
+      <div class="card"><h3>Which 2B tabs does it reconcile?</h3><p>B2B, B2BA, B2B-CDNR and B2B-CDNRA. ISD and IMPG have no supplier invoice to match, and ECO, B2B-DNR and the reversal and rejected tabs are not handled yet.</p></div>
+      <div class="card"><h3>Is this affiliated with GSTN or the Government?</h3><p>No. GSTR-2B Reconciler is an independent tool. It is not endorsed by or affiliated with the Goods and Services Tax Network, CBIC, the Government of India or Google.</p></div>
+      <div class="card"><h3>Is the result final?</h3><p>It is a working paper. Check the Mismatched and Missing tabs before you claim ITC or file a return; you remain responsible for the figures you file.</p></div>
+    </div>
+  </section>
+
+  <section id="support">
+    <h2>Support</h2>
+    <p>Email <a href="mailto:support@creet.in">support@creet.in</a> with what you were doing and the exact message the sidebar showed. Pro buyers: include your order number. Please don't send client spreadsheets; if we need to see a file, we will ask for a copy with the client's details removed.</p>
+  </section>
+
+  <footer>
+    <p>© <span id="y"></span> GSTR-2B Reconciler · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="refunds.html">Refunds</a> · Support: <a id="mail" href="mailto:support@creet.in">support@creet.in</a></p>
+    <p>Google Sheets and Google Workspace are trademarks of Google LLC. This add-on is not made or endorsed by Google.</p>
+  </footer>
+</div>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
