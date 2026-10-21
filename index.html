@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Creet – small tools for CAs and truck dispatchers</title>
+<meta name="description" content="Creet makes small, focused tools: a GSTR-2B reconciliation add-on for Google Sheets and an Income Tax portal extension for chartered accountants in India, and a Chrome side panel for US truck dispatchers.">
+<link rel="icon" href="gstr2b/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .products{display:grid;gap:16px;margin:8px 0 12px}
+  .product{display:grid;grid-template-columns:1fr auto;gap:6px 18px;align-items:center;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-decoration:none;color:var(--text)}
+  .product:hover{border-color:var(--accent)}
+  .product h3{margin:0;font-size:19px}
+  .product p{margin:0;color:var(--muted);font-size:15px;grid-column:1}
+  .product .go{grid-row:1 / span 3;grid-column:2;font-weight:700;color:var(--accent);white-space:nowrap}
+  .product .tag{justify-self:start}
+  @media (max-width:560px){.product{grid-template-columns:1fr}.product .go{grid-row:auto;grid-column:1}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="nav">
+    <a class="brand" href="./">Creet</a>
+    <nav><a href="#tools">Tools</a><a href="#contact">Contact</a></nav>
+  </header>
+
+  <section class="hero">
+    <h1>Small tools for the paperwork nobody else wants to automate.</h1>
+    <p>Creet builds focused add-ons for chartered accountants in India and truck dispatchers in the US. Each one does one job well, and your data stays in your own browser or spreadsheet.</p>
+  </section>
+
+  <section id="tools">
+    <h2>Tools</h2>
+    <div class="products">
+      <a class="product" href="gstr2b/">
+        <span class="tag">Google Sheets add-on, for CAs</span>
+        <h3>GSTR-2B Reconciler</h3>
+        <p>Match the GST portal's GSTR-2B with a client's purchase register and see claimable ITC by supplier GSTIN.</p>
+        <span class="go">Open</span>
+      </a>
+      <a class="product" href="itr-desk/">
+        <span class="tag">Chrome extension, for CAs</span>
+        <h3>ITR Desk</h3>
+        <p>Client switcher, PAN autofill, session keep-alive and organised downloads for the Income Tax e-Filing portal.</p>
+        <span class="go">Open</span>
+      </a>
+      <a class="product" href="dispatch-desk/">
+        <span class="tag">Chrome extension, for US dispatchers</span>
+        <h3>Dispatch Desk</h3>
+        <p>Fill broker carrier packets in one click, vet brokers with FMCSA data and work out rate per mile with deadhead.</p>
+        <span class="go">Open</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Questions, bugs or ideas: <a href="mailto:support@creet.in">support@creet.in</a>. Payments for paid plans are handled by Dodo Payments, the merchant of record.</p>
+  </section>
+
+  <footer>
+    <p>© <span id="y"></span> Creet</p>
+  </footer>
+</div>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
