@@ -5,64 +5,167 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Creet – small tools for CAs and truck dispatchers</title>
 <meta name="description" content="Creet makes small, focused tools: a GSTR-2B reconciliation add-on for Google Sheets and an Income Tax portal extension for chartered accountants in India, and a Chrome side panel for US truck dispatchers.">
-<link rel="icon" href="gstr2b/icon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://creet.in/">
+<meta property="og:title" content="Creet – small tools for CAs and truck dispatchers">
+<meta property="og:description" content="Small tools for the paperwork nobody else wants to automate.">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141832" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Courier+Prime&display=swap">
 <link rel="stylesheet" href="styles.css">
-<style>
-  .products{display:grid;gap:16px;margin:8px 0 12px}
-  .product{display:grid;grid-template-columns:1fr auto;gap:6px 18px;align-items:center;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-decoration:none;color:var(--text)}
-  .product:hover{border-color:var(--accent)}
-  .product h3{margin:0;font-size:19px}
-  .product p{margin:0;color:var(--muted);font-size:15px;grid-column:1}
-  .product .go{grid-row:1 / span 3;grid-column:2;font-weight:700;color:var(--accent);white-space:nowrap}
-  .product .tag{justify-self:start}
-  @media (max-width:560px){.product{grid-template-columns:1fr}.product .go{grid-row:auto;grid-column:1}}
-</style>
 </head>
 <body>
-<div class="wrap">
-  <header class="nav">
-    <a class="brand" href="./">Creet</a>
-    <nav><a href="#tools">Tools</a><a href="#contact">Contact</a></nav>
-  </header>
+<a class="skip" href="#main">Skip to content</a>
 
-  <section class="hero">
-    <h1>Small tools for the paperwork nobody else wants to automate.</h1>
-    <p>Creet builds focused add-ons for chartered accountants in India and truck dispatchers in the US. Each one does one job well, and your data stays in your own browser or spreadsheet.</p>
+<header class="wrap">
+  <div class="head-row">
+    <a class="mark" href="./"><img src="icon.svg" alt="" width="30" height="30">Creet</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#tools">Tools</a>
+      <a href="#how">How they work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero wrap">
+    <div>
+      <h1 class="ruled">Small tools for the paperwork nobody else wants to automate.</h1>
+      <p class="lead">Creet builds focused add-ons for chartered accountants in India and truck dispatchers in the US. Each one does one job well, and your data stays in your own browser or spreadsheet.</p>
+      <p class="actions">
+        <a class="btn btn-primary" href="#tools">See the tools</a>
+        <a class="btn" href="mailto:support@creet.in">Email us</a>
+      </p>
+    </div>
+
+    <figure class="stack">
+      <div class="sheets" aria-hidden="true">
+        <div class="copy copy-green"></div>
+        <div class="copy copy-pink"></div>
+        <div class="copy copy-yellow"></div>
+        <div class="form">
+          <p class="form-title">Today's paperwork <small>filled by Creet</small></p>
+          <dl>
+            <div class="field"><dt><span class="sw sw-pink"></span>Client PAN</dt><dd><span class="typed" style="--n:10;--d:.5s">ABCPE1234F</span></dd></div>
+            <div class="field"><dt><span class="sw sw-yellow"></span>Supplier GSTIN</dt><dd><span class="typed" style="--n:15;--d:1s">27AAPFU0939F1ZV</span></dd></div>
+            <div class="field"><dt><span class="sw sw-yellow"></span>Invoices matched</dt><dd><span class="typed" style="--n:10;--d:1.7s">412 of 418</span></dd></div>
+            <div class="field"><dt><span class="sw sw-green"></span>Broker check</dt><dd><span class="typed" style="--n:12;--d:2.25s">No red flags</span></dd></div>
+            <div class="field"><dt><span class="sw sw-green"></span>Rate per mile</dt><dd><span class="typed" style="--n:12;--d:2.85s">$2.47 all-in</span></dd></div>
+            <div class="field field-status"><dt>Status</dt><dd><span class="stamp">Done</span></dd></div>
+          </dl>
+        </div>
+      </div>
+      <figcaption>
+        <ul class="legend">
+          <li><a href="#gstr2b"><span class="sw sw-yellow"></span>GSTR-2B Reconciler</a></li>
+          <li><a href="#itr-desk"><span class="sw sw-pink"></span>ITR Desk</a></li>
+          <li><a href="#dispatch-desk"><span class="sw sw-green"></span>Dispatch Desk</a></li>
+        </ul>
+      </figcaption>
+    </figure>
   </section>
 
-  <section id="tools">
-    <h2>Tools</h2>
-    <div class="products">
-      <a class="product" href="gstr2b/">
-        <span class="tag">Google Sheets add-on, for CAs</span>
+  <section id="tools" class="section wrap">
+    <div class="section-head">
+      <h2>Three tools, one job each.</h2>
+      <p>Two for tax practices in India, one for freight dispatch in the US. Every tool has a free plan you can do real work on.</p>
+    </div>
+    <ul class="tools">
+      <li class="tool tool-yellow" id="gstr2b">
         <h3>GSTR-2B Reconciler</h3>
-        <p>Match the GST portal's GSTR-2B with a client's purchase register and see claimable ITC by supplier GSTIN.</p>
-        <span class="go">Open</span>
-      </a>
-      <a class="product" href="itr-desk/">
-        <span class="tag">Chrome extension, for CAs</span>
+        <p class="what">Match the GST portal's GSTR-2B with a client's purchase register and see claimable ITC by supplier GSTIN.</p>
+        <a class="btn" href="gstr2b/">See GSTR-2B Reconciler</a>
+        <dl class="fields">
+          <div><dt>For</dt><dd>CAs in India</dd></div>
+          <div><dt>Runs in</dt><dd>Google Sheets</dd></div>
+          <div><dt>Free plan</dt><dd>200 invoices a month</dd></div>
+          <div><dt>Pro</dt><dd>₹999 a year</dd></div>
+        </dl>
+      </li>
+      <li class="tool tool-pink" id="itr-desk">
         <h3>ITR Desk</h3>
-        <p>Client switcher, PAN autofill, session keep-alive and organised downloads for the Income Tax e-Filing portal.</p>
-        <span class="go">Open</span>
-      </a>
-      <a class="product" href="dispatch-desk/">
-        <span class="tag">Chrome extension, for US dispatchers</span>
+        <p class="what">Client switcher, PAN autofill, session keep-alive and organised downloads for the Income Tax e-Filing portal.</p>
+        <a class="btn" href="itr-desk/">See ITR Desk</a>
+        <dl class="fields">
+          <div><dt>For</dt><dd>CAs in India</dd></div>
+          <div><dt>Runs in</dt><dd>Chrome side panel</dd></div>
+          <div><dt>Free plan</dt><dd>5 clients</dd></div>
+          <div><dt>Pro</dt><dd>₹999 a year, $29 abroad</dd></div>
+        </dl>
+      </li>
+      <li class="tool tool-green" id="dispatch-desk">
         <h3>Dispatch Desk</h3>
-        <p>Fill broker carrier packets in one click, vet brokers with FMCSA data and work out rate per mile with deadhead.</p>
-        <span class="go">Open</span>
-      </a>
+        <p class="what">Fill broker carrier packets in one click, vet brokers with FMCSA data and work out rate per mile with deadhead.</p>
+        <a class="btn" href="dispatch-desk/">See Dispatch Desk</a>
+        <dl class="fields">
+          <div><dt>For</dt><dd>US truck dispatchers</dd></div>
+          <div><dt>Runs in</dt><dd>Chrome side panel</dd></div>
+          <div><dt>Free plan</dt><dd>1 carrier profile</dd></div>
+          <div><dt>Pro</dt><dd>$19 a month, $149 a year</dd></div>
+        </dl>
+      </li>
+    </ul>
+  </section>
+
+  <section id="how" class="section wrap">
+    <div class="section-head">
+      <h2>How every Creet tool works</h2>
+      <p>The same three rules hold for each tool, whichever portal or form it works on.</p>
+    </div>
+    <ul class="checks">
+      <li>
+        <svg class="tick" viewBox="0 0 30 30" aria-hidden="true"><rect x="1" y="1" width="28" height="28" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7.5 15.5l5 5L23 9" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Your data stays with you</h3>
+        <p>Client lists, carrier profiles and invoices live in your browser or your spreadsheet. There is no Creet server holding them.</p>
+      </li>
+      <li>
+        <svg class="tick" viewBox="0 0 30 30" aria-hidden="true"><rect x="1" y="1" width="28" height="28" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7.5 15.5l5 5L23 9" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>You press submit</h3>
+        <p>The tools fill, sort, match and check. They never log in, file a return or submit a form for you.</p>
+      </li>
+      <li>
+        <svg class="tick" viewBox="0 0 30 30" aria-hidden="true"><rect x="1" y="1" width="28" height="28" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7.5 15.5l5 5L23 9" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Free to start</h3>
+        <p>Each tool has a free plan. Pro is a licence key bought through Dodo Payments, with a 14-day money-back guarantee.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="contact" class="section wrap contact">
+    <h2>Contact</h2>
+    <div>
+      <p class="contact-mail"><a href="mailto:support@creet.in">support@creet.in</a></p>
+      <p>Questions, bugs or ideas. Tell us which tool you were using and what you saw on screen.</p>
+      <p class="small">Payments for paid plans are handled by Dodo Payments, the merchant of record.</p>
     </div>
   </section>
+</main>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Questions, bugs or ideas: <a href="mailto:support@creet.in">support@creet.in</a>. Payments for paid plans are handled by Dodo Payments, the merchant of record.</p>
-  </section>
-
-  <footer>
-    <p>© <span id="y"></span> Creet</p>
-  </footer>
-</div>
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<footer class="wrap">
+  <div class="foot-row">
+    <p>© <span id="y">2026</span> Creet</p>
+    <nav aria-label="Tools">
+      <a href="gstr2b/">GSTR-2B Reconciler</a>
+      <a href="itr-desk/">ITR Desk</a>
+      <a href="dispatch-desk/">Dispatch Desk</a>
+    </nav>
+  </div>
+</footer>
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+// On small screens the form starts below the fold: hold the typing until it scrolls into view.
+(function () {
+  var sheets = document.querySelector('.sheets');
+  if (!sheets || !('IntersectionObserver' in window) || sheets.getBoundingClientRect().top < innerHeight * 0.8) return;
+  sheets.classList.add('wait');
+  new IntersectionObserver(function (entries, observer) {
+    if (entries[0].isIntersecting) { sheets.classList.remove('wait'); observer.disconnect(); }
+  }, { threshold: 0.5 }).observe(sheets);
+})();
+</script>
 </body>
 </html>

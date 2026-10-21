@@ -1,11 +1,13 @@
 # creet.in – public site for all Creet products
 
-This folder is the whole website for `creet.in`, ready to become the GitHub repository
-`rishabhchulet/rishabhchulet.github.io` (the account's user site). Nothing is published yet.
+This folder is the whole website for `creet.in`, published by GitHub Pages from `main` of the
+repository `rishabhchulet/rishabhchulet.github.io` (the account's user site). A push to `main`
+deploys it.
 
 | Path | What it is |
 |---|---|
-| `index.html`, `styles.css` | Home page listing the three products |
+| `index.html`, `icon.svg` | Home page listing the three products, and the Creet icon |
+| `styles.css` | Shared stylesheet for every page, including `gstr2b/` (linked as `../styles.css`) |
 | `gstr2b/` | GSTR-2B Reconciler: home, privacy, terms, refunds, post-purchase page |
 | `CNAME` | `creet.in`, so GitHub Pages serves the site on the custom domain |
 | `.nojekyll` | Serve files as they are (no Jekyll processing) |
@@ -65,3 +67,12 @@ URLs for the Google OAuth consent screen and the Marketplace listing:
 | Terms of service | `https://creet.in/gstr2b/terms.html` |
 | Authorized domain | `creet.in` |
 | Support | `support@creet.in` |
+
+## Design
+
+The look is a stack of carbon-copy forms. Navy print (`--ink`), entries typed in blue
+(`--blue`, Courier Prime) and one carbon colour per tool: yellow for GSTR-2B Reconciler, pink
+for ITR Desk, green for Dispatch Desk. Headings are Archivo at a condensed width (`font-stretch`),
+loaded from Google Fonts. Every colour is a token at the top of `styles.css`, with a dark
+("carbon paper") set under `prefers-color-scheme: dark`. The only motion is the hero form
+typing itself in and being stamped; it is off for `prefers-reduced-motion`.
