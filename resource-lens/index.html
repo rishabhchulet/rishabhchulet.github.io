@@ -63,9 +63,9 @@
       <p>Four features, all read from your own project's code. No setup, no server, no account.</p>
     </div>
     <dl class="spec">
-      <div><dt>Completion</dt><dd>Model attributes and relationships inside <code>TextInput::make('…')</code>, <code>TextColumn::make('…')</code>, <code>Select::make('…')</code> and the other form field, table column, infolist entry and filter constructors. It completes the first segment of a dotted name.</dd></div>
+      <div><dt>Completion</dt><dd>Model attributes and relationships inside <code>TextInput::make('…')</code>, <code>TextColumn::make('…')</code>, <code>Select::make('…')</code> and the other form field, table column, infolist entry and filter constructors. After a dot it offers the related model's names: <code>author.</code> lists the user's columns and relationships.</dd></div>
       <div><dt>Go to declaration</dt><dd>Ctrl-click (Cmd-click on macOS) a name to jump to where it is declared: the migration column, <code>@property</code> tag, cast, fillable or <code>$appends</code> entry, accessor, or relationship method.</dd></div>
-      <div><dt>Unknown attribute warning</dt><dd>On core table columns and infolist entries whose name matches no attribute or relationship of the model, checking every segment of a path such as <code>author.name</code>. It stays silent whenever it cannot be certain (see below).</dd></div>
+      <div><dt>Unknown attribute warning</dt><dd>On core table columns and infolist entries whose name matches no attribute or relationship of the model, checking every segment of a path such as <code>author.name</code>. Alt+Enter changes the name to the closest one the model declares, such as <code>full_name</code> to <code>name</code>. It stays silent whenever it cannot be certain (see below).</dd></div>
       <div><dt>Rename and gutter links</dt><dd>Renaming an accessor or relationship method updates the <code>make('…')</code> names that use it. A gutter icon links each Resource to its model and each model back to its Resources.</dd></div>
     </dl>
   </section>
