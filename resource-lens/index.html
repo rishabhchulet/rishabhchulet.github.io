@@ -38,7 +38,7 @@
       <h1 class="ruled">Model attribute names that are right the first time.</h1>
       <p class="lead">Resource Lens completes, links and checks Eloquent model attribute names in Laravel admin panel resources built with Filament 4 and 5. It reads your migrations and model classes inside PhpStorm, so a column name typed by you or written by an AI assistant is checked against the model before you open the browser.</p>
       <p class="actions">
-        <a class="btn btn-primary" href="#install">Install in PhpStorm</a>
+        <a class="btn btn-primary" href="https://plugins.jetbrains.com/plugin/35358-resource-lens">Get it free on JetBrains Marketplace</a>
         <a class="btn" href="#silent">When it stays silent</a>
       </p>
     </div>
@@ -60,12 +60,13 @@
   <section id="features" class="section wrap">
     <div class="section-head">
       <h2>What the plugin does</h2>
-      <p>Four features, all read from your own project's code. No setup, no server, no account.</p>
+      <p>Five features, all read from your own project's code. No setup, no server, no account.</p>
     </div>
     <dl class="spec">
       <div><dt>Completion</dt><dd>Model attributes and relationships inside <code>TextInput::make('…')</code>, <code>TextColumn::make('…')</code>, <code>Select::make('…')</code> and the other form field, table column, infolist entry and filter constructors. After a dot it offers the related model's names: <code>author.</code> lists the user's columns and relationships.</dd></div>
       <div><dt>Go to declaration</dt><dd>Ctrl-click (Cmd-click on macOS) a name to jump to where it is declared: the migration column, <code>@property</code> tag, cast, fillable or <code>$appends</code> entry, accessor, or relationship method.</dd></div>
       <div><dt>Unknown attribute warning</dt><dd>On core table columns and infolist entries whose name matches no attribute or relationship of the model, checking every segment of a path such as <code>author.name</code>. Alt+Enter changes the name to the closest one the model declares, such as <code>full_name</code> to <code>name</code>. It stays silent whenever it cannot be certain (see below).</dd></div>
+      <div><dt>Searchable and sortable check</dt><dd><code>-&gt;searchable()</code> or <code>-&gt;sortable()</code> on an accessor, cast or other name that is not a database column fails at runtime with an SQL "Unknown column" error. Resource Lens warns before you open the browser, and stays quiet when you pass the columns to search or a <code>query:</code> callback.</dd></div>
       <div><dt>Rename and gutter links</dt><dd>Renaming an accessor or relationship method updates the <code>make('…')</code> names that use it. A gutter icon links each Resource to its model and each model back to its Resources.</dd></div>
     </dl>
   </section>
