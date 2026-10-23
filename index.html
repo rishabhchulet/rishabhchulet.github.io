@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script>try{var t=localStorage.getItem('creet-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
-<title>Creet – small tools for CAs and truck dispatchers</title>
-<meta name="description" content="Creet makes small, focused tools: a GSTR-2B reconciliation add-on for Google Sheets and an Income Tax portal extension for chartered accountants in India, and a Chrome side panel for US truck dispatchers.">
+<title>Creet – small tools for CAs, truck dispatchers and Laravel developers</title>
+<meta name="description" content="Creet makes small, focused tools: a GSTR-2B reconciliation add-on for Google Sheets and an Income Tax portal extension for chartered accountants in India, a Chrome side panel for US truck dispatchers, and a free PhpStorm plugin for Laravel developers building Filament panels.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://creet.in/">
-<meta property="og:title" content="Creet – small tools for CAs and truck dispatchers">
+<meta property="og:title" content="Creet – small tools for CAs, truck dispatchers and Laravel developers">
 <meta property="og:description" content="Small tools for the paperwork nobody else wants to automate.">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#141832" media="(prefers-color-scheme: dark)">
@@ -37,7 +37,7 @@
   <section class="hero wrap">
     <div>
       <h1 class="ruled">Small tools for the paperwork nobody else wants to automate.</h1>
-      <p class="lead">Creet builds focused add-ons for chartered accountants in India and truck dispatchers in the US. Each one does one job well, and your data stays in your own browser or spreadsheet.</p>
+      <p class="lead">Creet builds focused add-ons for chartered accountants in India, truck dispatchers in the US and Laravel developers. Each one does one job well, and your data stays in your own browser, spreadsheet or code editor.</p>
       <p class="actions">
         <a class="btn btn-primary" href="#tools">See the tools</a>
         <a class="btn" href="mailto:support@creet.in">Email us</a>
@@ -46,17 +46,19 @@
 
     <figure class="stack">
       <div class="sheets" aria-hidden="true">
+        <div class="copy copy-teal"></div>
         <div class="copy copy-green"></div>
         <div class="copy copy-pink"></div>
         <div class="copy copy-yellow"></div>
         <div class="form">
           <p class="form-title">Today's paperwork <small>filled by Creet</small></p>
           <dl>
-            <div class="field"><dt><span class="sw sw-pink"></span>Client PAN</dt><dd><span class="typed" style="--n:10;--d:.5s">ABCPE1234F</span></dd></div>
-            <div class="field"><dt><span class="sw sw-yellow"></span>Supplier GSTIN</dt><dd><span class="typed" style="--n:15;--d:1s">27AAPFU0939F1ZV</span></dd></div>
-            <div class="field"><dt><span class="sw sw-yellow"></span>Invoices matched</dt><dd><span class="typed" style="--n:10;--d:1.7s">412 of 418</span></dd></div>
-            <div class="field"><dt><span class="sw sw-green"></span>Broker check</dt><dd><span class="typed" style="--n:12;--d:2.25s">No red flags</span></dd></div>
-            <div class="field"><dt><span class="sw sw-green"></span>Rate per mile</dt><dd><span class="typed" style="--n:12;--d:2.85s">$2.47 all-in</span></dd></div>
+            <div class="field"><dt><span class="sw sw-pink"></span>Client PAN</dt><dd><span class="typed" style="--n:10;--d:.4s">ABCPE1234F</span></dd></div>
+            <div class="field"><dt><span class="sw sw-yellow"></span>Supplier GSTIN</dt><dd><span class="typed" style="--n:15;--d:.85s">27AAPFU0939F1ZV</span></dd></div>
+            <div class="field"><dt><span class="sw sw-yellow"></span>Invoices matched</dt><dd><span class="typed" style="--n:10;--d:1.45s">412 of 418</span></dd></div>
+            <div class="field"><dt><span class="sw sw-green"></span>Broker check</dt><dd><span class="typed" style="--n:12;--d:1.95s">No red flags</span></dd></div>
+            <div class="field"><dt><span class="sw sw-green"></span>Rate per mile</dt><dd><span class="typed" style="--n:12;--d:2.5s">$2.47 all-in</span></dd></div>
+            <div class="field"><dt><span class="sw sw-teal"></span>Model attribute</dt><dd><span class="typed" style="--n:11;--d:3s">author.name</span></dd></div>
             <div class="field field-status"><dt>Status</dt><dd><span class="stamp">Done</span></dd></div>
           </dl>
         </div>
@@ -66,6 +68,7 @@
           <li><a href="#gstr2b"><span class="sw sw-yellow"></span>GSTR-2B Reconciler</a></li>
           <li><a href="#itr-desk"><span class="sw sw-pink"></span>ITR Desk</a></li>
           <li><a href="#dispatch-desk"><span class="sw sw-green"></span>Dispatch Desk</a></li>
+          <li><a href="#resource-lens"><span class="sw sw-teal"></span>Resource Lens</a></li>
         </ul>
       </figcaption>
     </figure>
@@ -73,13 +76,14 @@
 
   <section id="tools" class="section wrap">
     <div class="section-head">
-      <h2>Three tools, one job each.</h2>
-      <p>Two for tax practices in India, one for freight dispatch in the US. Every tool has a free plan you can do real work on.</p>
+      <h2>Four tools, one job each.</h2>
+      <p>Two for tax practices in India, one for freight dispatch in the US and one for Laravel developers. Every tool is free to start, and Resource Lens is free outright.</p>
     </div>
     <ul class="tools">
       <li class="tool tool-yellow" id="gstr2b">
         <h3>GSTR-2B Reconciler</h3>
         <p class="what">Match the GST portal's GSTR-2B with a client's purchase register and see claimable ITC by supplier GSTIN.</p>
+        <p class="tool-state"><span class="tool-stamp tool-stamp-wait">In review</span><span>Waiting for Google's approval before it goes on the Google Workspace Marketplace.</span></p>
         <a class="btn" href="gstr2b/">See GSTR-2B Reconciler</a>
         <dl class="fields">
           <div><dt>For</dt><dd>CAs in India</dd></div>
@@ -91,6 +95,7 @@
       <li class="tool tool-pink" id="itr-desk">
         <h3>ITR Desk</h3>
         <p class="what">Client switcher, PAN autofill, session keep-alive and organised downloads for the Income Tax e-Filing portal.</p>
+        <p class="tool-state"><span class="tool-stamp">Live</span><span>Install from the <a href="https://chromewebstore.google.com/detail/leoeaiapcfpdppdipnkhppdlckkdifen">Chrome Web Store</a>.</span></p>
         <a class="btn" href="itr-desk/">See ITR Desk</a>
         <dl class="fields">
           <div><dt>For</dt><dd>CAs in India</dd></div>
@@ -102,12 +107,25 @@
       <li class="tool tool-green" id="dispatch-desk">
         <h3>Dispatch Desk</h3>
         <p class="what">Fill broker carrier packets in one click, vet brokers with FMCSA data and work out rate per mile with deadhead.</p>
+        <p class="tool-state"><span class="tool-stamp">Live</span><span>Install from the <a href="https://chromewebstore.google.com/detail/jkldfgnenphpndfpmgkmnfhippchkiph">Chrome Web Store</a>.</span></p>
         <a class="btn" href="dispatch-desk/">See Dispatch Desk</a>
         <dl class="fields">
           <div><dt>For</dt><dd>US truck dispatchers</dd></div>
           <div><dt>Runs in</dt><dd>Chrome side panel</dd></div>
           <div><dt>Free plan</dt><dd>1 carrier profile</dd></div>
           <div><dt>Pro</dt><dd><span data-price data-usd="19" data-unit=" a month">$19 a month</span>, <span data-price data-usd="149" data-unit=" a year">$149 a year</span></dd></div>
+        </dl>
+      </li>
+      <li class="tool tool-teal" id="resource-lens">
+        <h3>Resource Lens</h3>
+        <p class="what">Completion, go to declaration and an unknown-attribute warning with a quick fix for Eloquent model names in Filament <code>make('…')</code> calls, after a dot too. Renames follow, and gutter icons link each Resource to its model.</p>
+        <p class="tool-state"><span class="tool-stamp">Live</span><span>Install from the <a href="https://plugins.jetbrains.com/plugin/35358-resource-lens">JetBrains Marketplace</a>.</span></p>
+        <a class="btn" href="resource-lens/">See Resource Lens</a>
+        <dl class="fields">
+          <div><dt>For</dt><dd>Laravel developers</dd></div>
+          <div><dt>Runs in</dt><dd>PhpStorm 2025.3 or newer</dd></div>
+          <div><dt>Works with</dt><dd>Filament 4 and 5</dd></div>
+          <div><dt>Price</dt><dd>Free</dd></div>
         </dl>
       </li>
     </ul>
@@ -123,17 +141,17 @@
       <li>
         <svg class="tick" viewBox="0 0 30 30" aria-hidden="true"><rect x="1" y="1" width="28" height="28" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7.5 15.5l5 5L23 9" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <h3>Your data stays with you</h3>
-        <p>Client lists, carrier profiles and invoices live in your browser or your spreadsheet. There is no Creet server holding them.</p>
+        <p>Client lists, carrier profiles and invoices live in your browser or your spreadsheet, and your code never leaves your machine. There is no Creet server holding any of it.</p>
       </li>
       <li>
         <svg class="tick" viewBox="0 0 30 30" aria-hidden="true"><rect x="1" y="1" width="28" height="28" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7.5 15.5l5 5L23 9" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <h3>You press submit</h3>
-        <p>The tools fill, sort, match and check. They never log in, file a return or submit a form for you.</p>
+        <p>The tools fill, sort, match, check and suggest. They never log in, file a return, submit a form or change your code without you.</p>
       </li>
       <li>
         <svg class="tick" viewBox="0 0 30 30" aria-hidden="true"><rect x="1" y="1" width="28" height="28" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7.5 15.5l5 5L23 9" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <h3>Free to start</h3>
-        <p>Each tool has a free plan. Pro is a licence key bought through Dodo Payments, with a 14-day money-back guarantee.</p>
+        <p>Each tool has a free plan, and Resource Lens is free outright. Pro is a licence key bought through Dodo Payments, with a 14-day money-back guarantee.</p>
       </li>
     </ul>
   </section>
@@ -155,6 +173,7 @@
       <a href="gstr2b/">GSTR-2B Reconciler</a>
       <a href="itr-desk/">ITR Desk</a>
       <a href="dispatch-desk/">Dispatch Desk</a>
+      <a href="resource-lens/">Resource Lens</a>
     </nav>
   </div>
 </footer>

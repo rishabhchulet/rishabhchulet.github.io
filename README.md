@@ -6,7 +6,7 @@ deploys it.
 
 | Path | What it is |
 |---|---|
-| `index.html`, `icon.svg` | Home page listing the three products, and the Creet icon |
+| `index.html`, `icon.svg` | Home page listing the four products with their status, and the Creet icon |
 | `styles.css` | Shared stylesheet for every page, including `gstr2b/` (linked as `../styles.css`) |
 | `gstr2b/` | GSTR-2B Reconciler: home, privacy, terms, refunds, post-purchase page |
 | `resource-lens/` | Resource Lens (PhpStorm plugin): overview, EULA, privacy; `lens.css` adds its teal carbon colour. Its Marketplace listing uses `https://creet.in/resource-lens/` (website), `.../eula.html` (licence) and `.../privacy.html` |
@@ -73,7 +73,7 @@ URLs for the Google OAuth consent screen and the Marketplace listing:
 
 The look is a stack of carbon-copy forms. Navy print (`--ink`), entries typed in blue
 (`--blue`, Courier Prime) and one carbon colour per tool: yellow for GSTR-2B Reconciler, pink
-for ITR Desk, green for Dispatch Desk. Headings are Archivo at a condensed width (`font-stretch`),
+for ITR Desk, green for Dispatch Desk, teal for Resource Lens. Headings are Archivo at a condensed width (`font-stretch`),
 loaded from Google Fonts. Every colour is a token at the top of `styles.css`, with a dark
 ("carbon paper") set under `prefers-color-scheme: dark`. The only motion is the hero form
 typing itself in and being stamped; it is off for `prefers-reduced-motion`.
