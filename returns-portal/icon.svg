@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <title>Returns Portal</title>
+  <rect width="256" height="256" rx="56" fill="#116dff"/>
+  <!-- parcel -->
+  <path d="M64 120 L128 90 L192 120 L192 188 L128 218 L64 188 Z" fill="#ffffff"/>
+  <path d="M64 120 L128 150 L192 120" fill="none" stroke="#116dff" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M128 150 V218" fill="none" stroke="#116dff" stroke-width="7"/>
+  <!-- return arrow: leaves the parcel and curves back to the left -->
+  <path d="M160 104 A30 30 0 0 0 160 44 H90" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round"/>
+  <path d="M110 22 L86 44 L110 66" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

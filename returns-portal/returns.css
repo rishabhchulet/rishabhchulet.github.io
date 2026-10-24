@@ -1,0 +1,53 @@
+/* Returns Portal pages: the shared styles.css plus this tool's carbon colour (Wix blue, called azure
+   because --blue is already the site's accent), the example shopper form and the screenshot gallery. */
+:root{
+  --azure:#d3e5ff;--azure-mark:#116dff;--copy-azure:#d3e5ff;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--azure:#14294d;--azure-mark:#6aa9ff;--copy-azure:#26467f}
+}
+:root[data-theme="dark"]{--azure:#14294d;--azure-mark:#6aa9ff;--copy-azure:#26467f}
+
+.sw-azure{background:var(--azure-mark)}
+.legal .notice{background:var(--azure)}
+.plan-pro{background:var(--azure)}
+figure{margin:0}
+figcaption{margin-top:18px;font-size:14px;color:var(--ink-soft)}
+
+/* Example of the shopper form, drawn in HTML so the hero works before the screenshots exist */
+.portal-frame{border:1.5px solid var(--ink);border-radius:4px;background:var(--sheet);overflow:hidden;box-shadow:10px 10px 0 var(--copy-azure)}
+.portal-bar{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 14px;padding:9px 14px;border-bottom:1px solid var(--rule);font-size:13px;color:var(--ink-soft)}
+.portal-bar b{color:var(--ink);font-weight:600}
+.portal-body{padding:6px 18px 20px}
+.portal-fields{margin:0}
+.portal-fields > div{display:grid;grid-template-columns:8.4em minmax(0,1fr);align-items:baseline;gap:2px 12px;padding:12px 0 8px;border-bottom:1px solid var(--rule)}
+.portal-fields dt{font-size:14px;color:var(--ink-soft)}
+.portal-fields dd{margin:0;font:400 16px/1.4 var(--typed);color:var(--blue);overflow-wrap:anywhere}
+.portal-ok{display:flex;align-items:center;gap:9px;margin:14px 0 4px;font-size:14px;color:var(--ink-soft)}
+.portal-items{margin:0 0 4px;padding:0;list-style:none}
+.portal-items li{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--rule);font-size:15px}
+.portal-items li span:last-child{margin-left:auto;font-family:var(--typed);color:var(--ink-soft)}
+.portal-items .box{position:relative;flex:none;width:18px;height:18px;border:1.5px solid var(--ink);border-radius:3px}
+.portal-items .on .box{background:var(--azure-mark);border-color:var(--azure-mark)}
+.portal-items .on .box::after{content:"";position:absolute;left:5px;top:1px;width:5px;height:10px;border:solid var(--on-blue);border-width:0 2px 2px 0;transform:rotate(45deg)}
+.portal-send{margin:18px 0 0}
+.portal-send span{display:inline-block;padding:10px 18px;border-radius:6px;background:var(--azure-mark);color:var(--on-blue);font-weight:700;font-size:15px}
+
+/* Screenshot gallery: six 4:3 images, two per row */
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 32px;margin:0;padding:0;list-style:none}
+.gallery li{min-width:0}
+.shot a{display:block;border:1.5px solid var(--ink);border-radius:4px;overflow:hidden;background:var(--azure);box-shadow:8px 8px 0 var(--copy-azure);color:var(--ink-soft);font-size:14px}
+.shot img{width:100%;height:auto;aspect-ratio:4 / 3;object-fit:cover}
+.shot figcaption{margin-top:16px}
+.shot figcaption b{display:block;margin-bottom:2px;color:var(--ink);font-size:17px;font-weight:700}
+.shot figcaption span{display:block;color:var(--ink-soft)}
+
+@media (max-width:960px){
+  .gallery{gap:32px 24px}
+}
+@media (max-width:560px){
+  .portal-body{padding:4px 14px 18px}
+  .portal-fields > div{grid-template-columns:minmax(0,1fr)}
+  .gallery{grid-template-columns:minmax(0,1fr);gap:32px}
+  .shot a{box-shadow:6px 6px 0 var(--copy-azure)}
+}
