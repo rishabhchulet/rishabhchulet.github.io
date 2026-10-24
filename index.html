@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script>try{var t=localStorage.getItem('creet-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
-<title>Creet – small tools for CAs, truck dispatchers and Laravel developers</title>
-<meta name="description" content="Creet makes small, focused tools: a GSTR-2B reconciliation add-on for Google Sheets and an Income Tax portal extension for chartered accountants in India, a Chrome side panel for US truck dispatchers, and a free PhpStorm plugin for Laravel developers building Filament panels.">
+<title>Creet – small tools for CAs, truck dispatchers, Laravel developers and Wix stores</title>
+<meta name="description" content="Creet makes small, focused tools: a GSTR-2B reconciliation add-on for Google Sheets and an Income Tax portal extension for chartered accountants in India, a Chrome side panel for US truck dispatchers, a free PhpStorm plugin for Laravel developers building Filament panels, and a returns and exchanges app for Wix Stores.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://creet.in/">
-<meta property="og:title" content="Creet – small tools for CAs, truck dispatchers and Laravel developers">
+<meta property="og:title" content="Creet – small tools for CAs, truck dispatchers, Laravel developers and Wix stores">
 <meta property="og:description" content="Small tools for the paperwork nobody else wants to automate.">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#141832" media="(prefers-color-scheme: dark)">
@@ -37,7 +37,7 @@
   <section class="hero wrap">
     <div>
       <h1 class="ruled">Small tools for the paperwork nobody else wants to automate.</h1>
-      <p class="lead">Creet builds focused add-ons for chartered accountants in India, truck dispatchers in the US and Laravel developers. Each one does one job well, and your data stays in your own browser, spreadsheet or code editor.</p>
+      <p class="lead">Creet builds focused add-ons for chartered accountants in India, truck dispatchers in the US, Laravel developers and Wix store owners. Each one does one job well, and your data stays in your own browser, spreadsheet, code editor or Wix site.</p>
       <p class="actions">
         <a class="btn btn-primary" href="#tools">See the tools</a>
         <a class="btn" href="mailto:support@creet.in">Email us</a>
@@ -46,6 +46,7 @@
 
     <figure class="stack">
       <div class="sheets" aria-hidden="true">
+        <div class="copy copy-azure"></div>
         <div class="copy copy-teal"></div>
         <div class="copy copy-green"></div>
         <div class="copy copy-pink"></div>
@@ -59,6 +60,7 @@
             <div class="field"><dt><span class="sw sw-green"></span>Broker check</dt><dd><span class="typed" style="--n:12;--d:1.95s">No red flags</span></dd></div>
             <div class="field"><dt><span class="sw sw-green"></span>Rate per mile</dt><dd><span class="typed" style="--n:12;--d:2.5s">$2.47 all-in</span></dd></div>
             <div class="field"><dt><span class="sw sw-teal"></span>Model attribute</dt><dd><span class="typed" style="--n:11;--d:3s">author.name</span></dd></div>
+            <div class="field"><dt><span class="sw sw-azure"></span>Return reason</dt><dd><span class="typed" style="--n:10;--d:3.45s">Wrong size</span></dd></div>
             <div class="field field-status"><dt>Status</dt><dd><span class="stamp">Done</span></dd></div>
           </dl>
         </div>
@@ -69,6 +71,7 @@
           <li><a href="#itr-desk"><span class="sw sw-pink"></span>ITR Desk</a></li>
           <li><a href="#dispatch-desk"><span class="sw sw-green"></span>Dispatch Desk</a></li>
           <li><a href="#resource-lens"><span class="sw sw-teal"></span>Resource Lens</a></li>
+          <li><a href="#returns-portal"><span class="sw sw-azure"></span>Returns Portal</a></li>
         </ul>
       </figcaption>
     </figure>
@@ -76,8 +79,8 @@
 
   <section id="tools" class="section wrap">
     <div class="section-head">
-      <h2>Four tools, one job each.</h2>
-      <p>Two for tax practices in India, one for freight dispatch in the US and one for Laravel developers. Every tool is free to start, and Resource Lens is free outright.</p>
+      <h2>Five tools, one job each.</h2>
+      <p>Two for tax practices in India, one for freight dispatch in the US, one for Laravel developers and one for Wix store owners. Every tool is free to start, and Resource Lens is free outright.</p>
     </div>
     <ul class="tools">
       <li class="tool tool-yellow" id="gstr2b">
@@ -128,6 +131,20 @@
           <div><dt>Price</dt><dd>Free</dd></div>
         </dl>
       </li>
+      <li class="tool tool-azure" id="returns-portal">
+        <h3>Returns Portal</h3>
+        <p class="what">Shoppers start returns and exchanges from your Wix store without logging in. You review, refund and exchange from the Wix dashboard, and status emails go out through your own Wix Automations.</p>
+        <p class="tool-state"><span class="tool-stamp tool-stamp-wait">In review</span><span>In review for the Wix App Market. The listing will be linked here once Wix approves it.</span></p>
+        <a class="btn" href="returns-portal/">See Returns Portal</a>
+        <dl class="fields">
+          <div><dt>For</dt><dd>Wix store owners</dd></div>
+          <div><dt>Runs in</dt><dd>Wix Stores</dd></div>
+          <!-- PRICING:START -->
+          <div><dt>Free plan</dt><dd>5 return requests a month</dd></div>
+          <div><dt>Pro</dt><dd>$19 a month, 14-day free trial</dd></div>
+          <!-- PRICING:END -->
+        </dl>
+      </li>
     </ul>
     <p class="note" data-price-note hidden></p>
   </section>
@@ -141,17 +158,17 @@
       <li>
         <svg class="tick" viewBox="0 0 30 30" aria-hidden="true"><rect x="1" y="1" width="28" height="28" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7.5 15.5l5 5L23 9" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <h3>Your data stays with you</h3>
-        <p>Client lists, carrier profiles and invoices live in your browser or your spreadsheet, and your code never leaves your machine. There is no Creet server holding any of it.</p>
+        <p>Client lists, carrier profiles and invoices live in your browser or your spreadsheet, and your code never leaves your machine. Returns Portal keeps its return requests on the store's own Wix site. There is no Creet server holding any of it.</p>
       </li>
       <li>
         <svg class="tick" viewBox="0 0 30 30" aria-hidden="true"><rect x="1" y="1" width="28" height="28" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7.5 15.5l5 5L23 9" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <h3>You press submit</h3>
-        <p>The tools fill, sort, match, check and suggest. They never log in, file a return, submit a form or change your code without you.</p>
+        <p>The tools fill, sort, match, check and suggest. They never log in, file a return, submit a form or change your code without you. Returns Portal refunds nothing until you approve it.</p>
       </li>
       <li>
         <svg class="tick" viewBox="0 0 30 30" aria-hidden="true"><rect x="1" y="1" width="28" height="28" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7.5 15.5l5 5L23 9" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <h3>Free to start</h3>
-        <p>Each tool has a free plan, and Resource Lens is free outright. Pro is a licence key bought through Dodo Payments, with a 14-day money-back guarantee.</p>
+        <p>Each tool has a free plan, and Resource Lens is free outright. Pro on the Chrome extensions and the Google Sheets add-on is a licence key bought through Dodo Payments, with a 14-day money-back guarantee. Returns Portal's Pro plan is billed by Wix.</p>
       </li>
     </ul>
   </section>
@@ -161,7 +178,7 @@
     <div>
       <p class="contact-mail"><a href="mailto:support@creet.in">support@creet.in</a></p>
       <p>Questions, bugs or ideas. Tell us which tool you were using and what you saw on screen.</p>
-      <p class="small">Payments for paid plans are handled by Dodo Payments, the merchant of record.</p>
+      <p class="small">Payments for paid plans are handled by Dodo Payments, the merchant of record. Returns Portal's plan is billed by Wix.</p>
     </div>
   </section>
 </main>
@@ -174,6 +191,7 @@
       <a href="itr-desk/">ITR Desk</a>
       <a href="dispatch-desk/">Dispatch Desk</a>
       <a href="resource-lens/">Resource Lens</a>
+      <a href="returns-portal/">Returns Portal</a>
     </nav>
   </div>
 </footer>

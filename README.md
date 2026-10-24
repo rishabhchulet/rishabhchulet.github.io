@@ -6,10 +6,11 @@ deploys it.
 
 | Path | What it is |
 |---|---|
-| `index.html`, `icon.svg` | Home page listing the four products with their status, and the Creet icon |
+| `index.html`, `icon.svg` | Home page listing the five products with their status, and the Creet icon |
 | `styles.css` | Shared stylesheet for every page, including `gstr2b/` (linked as `../styles.css`) |
 | `gstr2b/` | GSTR-2B Reconciler: home, privacy, terms, refunds, post-purchase page |
 | `resource-lens/` | Resource Lens (PhpStorm plugin): overview, EULA, privacy; `lens.css` adds its teal carbon colour. Its Marketplace listing uses `https://creet.in/resource-lens/` (website), `.../eula.html` (licence) and `.../privacy.html` |
+| `returns-portal/` | Returns Portal (Wix App Market app): overview, privacy, terms, support; `returns.css` adds its azure (Wix blue) colour. The overview's five screenshots, `img/shot-1-dashboard.png` to `img/shot-5-rules.png` (4:3, 1600x1200), are added separately: until then the gallery shows their alt text. Its listing uses `https://creet.in/returns-portal/` (website), `.../privacy.html`, `.../terms.html` and `.../support.html` |
 | `CNAME` | `creet.in`, so GitHub Pages serves the site on the custom domain |
 | `.nojekyll` | Serve files as they are (no Jekyll processing) |
 
@@ -35,8 +36,11 @@ grep -rn "TODO" --include=*.html .
 | `TODO: postal address` | gstr2b privacy, terms | A contact address |
 | `TODO: support email`, `mailto:TODO_SUPPORT_EMAIL` | every page | e.g. `support@creet.in` (forwarded to your inbox, below) |
 | `TODO_MARKETPLACE_LISTING_URL` | gstr2b index (2 buttons) | The Marketplace listing URL once it exists; until then `#pricing` |
+| `<!-- TODO WIX_LISTING_URL ... -->` | returns-portal index (hero button, `href="#"`) | The Wix App Market listing URL; then delete the comment |
 
 Also set the "Last updated" date on the privacy, terms and refunds pages to the publish day.
+
+Returns Portal's plans (Free: 5 return requests a month; Pro: 19 USD a month, 17% less yearly, 14-day free trial) appear in four places, each between `<!-- PRICING:START -->` and `<!-- PRICING:END -->` comments: the pricing section of `returns-portal/index.html`, clause 3 of `returns-portal/terms.html`, the note at the end of `returns-portal/support.html`, and the Returns Portal sheet on the home page. Change them together: `grep -rn "PRICING:" --include=*.html .`
 
 ## Publish (about 30 minutes, after the domain is bought)
 
@@ -73,7 +77,7 @@ URLs for the Google OAuth consent screen and the Marketplace listing:
 
 The look is a stack of carbon-copy forms. Navy print (`--ink`), entries typed in blue
 (`--blue`, Courier Prime) and one carbon colour per tool: yellow for GSTR-2B Reconciler, pink
-for ITR Desk, green for Dispatch Desk, teal for Resource Lens. Headings are Archivo at a condensed width (`font-stretch`),
+for ITR Desk, green for Dispatch Desk, teal for Resource Lens, azure (Wix blue, `--azure`) for Returns Portal. Headings are Archivo at a condensed width (`font-stretch`),
 loaded from Google Fonts. Every colour is a token at the top of `styles.css`, with a dark
 ("carbon paper") set under `prefers-color-scheme: dark`. The only motion is the hero form
 typing itself in and being stamped; it is off for `prefers-reduced-motion`.
