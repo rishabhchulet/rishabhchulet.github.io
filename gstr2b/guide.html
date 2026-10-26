@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>try{var t=localStorage.getItem('creet-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<title>GSTR-2B reconciliation: 2B vs books with the Tally purchase register</title>
+<meta name="description" content="GSTR-2B reconciliation, step by step: reconcile the 2B with the Tally, Busy or Zoho purchase register in Google Sheets and act on every mismatch before GSTR-3B.">
+<link rel="canonical" href="https://creet.in/gstr2b/guide.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://creet.in/gstr2b/guide.html">
+<meta property="og:title" content="How to reconcile GSTR-2B with the purchase register in Google Sheets">
+<meta property="og:description" content="GSTR-2B reconciliation, step by step: reconcile the 2B with the Tally, Busy or Zoho purchase register and act on every mismatch before GSTR-3B.">
+<meta property="article:modified_time" content="2026-10-26">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141832" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Courier+Prime&display=swap">
+<link rel="stylesheet" href="../styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to reconcile GSTR-2B with the purchase register in Google Sheets",
+  "description": "GSTR-2B reconciliation, step by step: reconcile the 2B with the Tally, Busy or Zoho purchase register in Google Sheets and act on every mismatch before GSTR-3B.",
+  "inLanguage": "en-IN",
+  "datePublished": "2026-10-26",
+  "dateModified": "2026-10-26",
+  "mainEntityOfPage": "https://creet.in/gstr2b/guide.html",
+  "author": { "@type": "Organization", "name": "Creet", "url": "https://creet.in/" },
+  "publisher": { "@type": "Organization", "name": "Creet", "url": "https://creet.in/" },
+  "about": { "@type": "SoftwareApplication", "name": "GSTR-2B Reconciler", "applicationCategory": "BusinessApplication", "url": "https://creet.in/gstr2b/" }
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="wrap">
+  <div class="head-row">
+    <div class="brand">
+      <a class="mark" href="../"><img src="../icon.svg" alt="" width="30" height="30">Creet</a>
+      <span class="sep" aria-hidden="true">/</span>
+      <a class="product" href="./"><img src="icon.svg" alt="" width="24" height="24">GSTR-2B Reconciler</a>
+    </div>
+    <nav class="site-nav" aria-label="Main">
+      <a href="./">Add-on</a>
+      <a href="guide.html" aria-current="page">Guide</a>
+      <a href="./#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="privacy.html">Privacy</a>
+      <button class="theme-toggle" type="button" aria-label="Switch colour theme"><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5V5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="product-hero guide-hero wrap">
+    <div>
+      <p class="kind"><span class="sw sw-yellow"></span>Guide: GSTR-2B reconciliation</p>
+      <h1 class="ruled">How to reconcile GSTR-2B with the purchase register in Google Sheets</h1>
+      <p class="lead">A practical walkthrough for CAs and GST practitioners: download the GSTR-2B Excel from the GST portal, export the client's purchase register from Tally, Busy or Zoho, match 2B vs books in one Google Sheet, and know what to do with every invoice that does not match before GSTR-3B is due.</p>
+      <p class="byline">By Creet, makers of GSTR-2B Reconciler. Updated 26 October 2026.</p>
+      <p class="actions">
+        <a class="btn btn-primary" href="https://workspace.google.com/marketplace/app/gstr2b_reconciler/1005859264831">Get it for Google Sheets, free</a>
+        <a class="btn" href="#steps">Read the steps</a>
+      </p>
+    </div>
+
+    <figure class="stack">
+      <div class="sheets">
+        <div class="copy copy-yellow" aria-hidden="true"></div>
+        <div class="form">
+          <p class="form-title">The monthly 2B close <small>monthly filers</small></p>
+          <dl>
+            <div class="field"><dt><span class="sw sw-yellow"></span>GSTR-2B ready</dt><dd><span class="typed" style="--n:18;--d:.4s">14th of next month</span></dd></div>
+            <div class="field"><dt><span class="sw sw-yellow"></span>Reconcile, chase</dt><dd><span class="typed" style="--n:12;--d:1.2s">14th to 19th</span></dd></div>
+            <div class="field"><dt><span class="sw sw-yellow"></span>GSTR-3B due</dt><dd><span class="typed" style="--n:18;--d:1.8s">20th of next month</span></dd></div>
+            <div class="field field-status"><dt>Status</dt><dd><span class="stamp">Reconciled</span></dd></div>
+          </dl>
+        </div>
+      </div>
+      <figcaption>Quarterly (QRMP) filers work on the quarter's 2B and file GSTR-3B by the 22nd or 24th of the month after the quarter, depending on the state.</figcaption>
+    </figure>
+  </section>
+
+  <nav class="wrap" aria-label="In this guide">
+    <div class="toc">
+      <b>In this guide</b>
+      <ol>
+        <li><a href="#why">Why reconcile</a></li>
+        <li><a href="#download">1. Download the 2B</a></li>
+        <li><a href="#export">2. Export the register</a></li>
+        <li><a href="#import">3. Import both</a></li>
+        <li><a href="#run">4. Reconcile</a></li>
+        <li><a href="#read">Read the result</a></li>
+        <li><a href="#next-month">Next month</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ol>
+    </div>
+  </nav>
+
+  <section id="why" class="section wrap prose">
+    <h2>Why reconcile 2B with the books every month</h2>
+    <p>Since 1 January 2022, input tax credit can be taken only on invoices and debit notes that the supplier has reported in GSTR-1 or IFF and that appear in your GSTR-2B (section 16(2)(aa) of the CGST Act, read with rule 36(4)). The ITC table of GSTR-3B is filled in from the 2B, so the 2B is the ceiling, and the purchase register is what the client actually bought. Comparing the two, invoice by invoice, tells you before you file:</p>
+    <ul>
+      <li>what you can claim now: invoices in both, with the same values;</li>
+      <li>what to hold: invoices in the books that the supplier has not reported, so they are not in the 2B;</li>
+      <li>what to look into: invoices in the 2B that are not in the books, and pairs whose value, date, tax or GSTIN differ.</li>
+    </ul>
+    <p>The window is short. The 2B for a month is ready on the 14th of the next month, and GSTR-3B is due on the 20th for monthly filers. Since October 2024 there is also the Invoice Management System (IMS) on the portal, where you accept, reject or keep invoices pending; the reconciliation tells you which ones need that.</p>
+  </section>
+
+  <section id="steps" class="section wrap">
+    <div class="section-head">
+      <h2>Step by step</h2>
+      <p>From the GST portal to a list of suppliers to chase. Steps 1 to 3 are the same every month; step 4 is where GSTR-2B Reconciler does the matching.</p>
+    </div>
+    <ol class="walk">
+      <li id="download">
+        <h3>Download the GSTR-2B Excel</h3>
+        <div class="walk-body">
+          <p>Log in at gst.gov.in and open <span class="path">Services → Returns → Returns Dashboard</span>. Choose the financial year, quarter and period, click Search, then View on the GSTR-2B tile. On the summary page, click <span class="path">Download GSTR-2B Summary (Excel)</span>.</p>
+          <p>Despite the name, the file has every document: a Read me tab, the summary tabs, then B2B, B2BA, B2B-CDNR, B2B-CDNRA and the rest, one tab per table.</p>
+          <p class="note">If the month has more than 1,000 documents, the portal disables that button and makes the file through Download → Generate Excel file to download instead. The add-on is built and tested on the standard file; if the larger one gives you trouble, write to <a href="mailto:support@creet.in">support@creet.in</a>.</p>
+        </div>
+      </li>
+      <li id="export">
+        <h3>Export the purchase register from Tally, Busy or Zoho</h3>
+        <div class="walk-body">
+          <p>Export the client's purchases for the same month to Excel or CSV, one row per supplier invoice rather than monthly totals. Tally Prime, Busy and Zoho Books all have a purchase register that does this, and a sheet you keep yourself works too. What matters is the columns:</p>
+          <div class="table-wrap">
+            <table>
+              <tr><th>Column</th><th>Why it matters</th></tr>
+              <tr><td>Supplier GSTIN</td><td>Matched first. GSTINs are checksum-verified, so a mistyped one is reported rather than quietly missed.</td></tr>
+              <tr><td>Supplier invoice number</td><td>The supplier's number as printed on the bill (Supplier Invoice No. in a Tally voucher), not the client's own voucher number.</td></tr>
+              <tr><td>Invoice date</td><td>Matched within 3 days by default.</td></tr>
+              <tr><td>Taxable value</td><td>Matched within ₹1 by default.</td></tr>
+              <tr><td>IGST, CGST, SGST/UTGST, cess</td><td>In separate columns, so tax under the wrong head is caught.</td></tr>
+              <tr><td>Supplier name, document type</td><td>Optional. The name is used in the messages to suppliers.</td></tr>
+            </table>
+          </div>
+          <p>Leave total rows and unregistered purchases in if they are there: rows without a GSTIN or an invoice number are skipped and listed at the end of the Summary.</p>
+        </div>
+      </li>
+      <li id="import">
+        <h3>Import both into one Google Sheet</h3>
+        <div class="walk-body">
+          <ul>
+            <li>Create a Google Sheet for the client. One spreadsheet per client works best: the add-on saves the column mapping in it.</li>
+            <li>Set <span class="path">File → Settings → Locale</span> to India, so dd-mm-yyyy dates are read the Indian way.</li>
+            <li>Import the 2B with <span class="path">File → Import → Upload</span>, choose the Excel file and set Import location to <span class="path">Insert new sheet(s)</span>. Each table arrives as its own tab.</li>
+            <li>If the dialog offers <span class="path">Convert text to numbers, dates, and formulas</span> (it does for CSV files), untick it, so invoice numbers like 00123 keep their zeros. The add-on reads the text itself.</li>
+            <li>Import the purchase register the same way, as another tab in the same spreadsheet.</li>
+          </ul>
+          <p class="note">Keep the 2B's Read me tab: the add-on fills in the client name and return period from it.</p>
+        </div>
+      </li>
+      <li id="run">
+        <h3>Run Reconcile GSTR-2B</h3>
+        <div class="walk-body">
+          <p>Install <a href="https://workspace.google.com/marketplace/app/gstr2b_reconciler/1005859264831">GSTR-2B Reconciler</a> from the Google Workspace Marketplace, then open <span class="path">Extensions → GSTR-2B Reconciler → Reconcile GSTR-2B</span>. The sidebar has three steps:</p>
+          <ul>
+            <li><b>GSTR-2B data:</b> tick every 2B tab to reconcile, normally B2B, B2BA, B2B-CDNR and B2B-CDNRA. The portal's two- and three-row headers are found automatically.</li>
+            <li><b>Purchase register:</b> choose its tab and check the column mapping the add-on suggests from the header text.</li>
+            <li><b>Reconcile:</b> enter the client and return period, keep the tolerances at ±3 days and ±₹1 or change them, and click Reconcile.</li>
+          </ul>
+          <p>The sidebar then shows GSTR-2B against the books at a glance, with the ITC you can claim now and the ITC on hold, and the full result is written into new tabs of the same spreadsheet. Your 2B and register tabs are never changed.</p>
+          <p class="note">The first time, Google asks you to allow three permissions; the add-on can read and write only the spreadsheet it is opened in. To try it first, click Try with sample data in the sidebar: it adds two tabs of made-up invoices, and runs on them are not counted against the free plan.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="read" class="section wrap">
+    <div class="section-head">
+      <h2>Read the result, tab by tab</h2>
+      <p>The add-on writes seven tabs into the client's spreadsheet. Here is what each one means and what to do with it before you file GSTR-3B.</p>
+    </div>
+    <dl class="spec">
+      <div>
+        <dt>Summary</dt>
+        <dd>
+          <p>Start here. Counts and head-wise totals (IGST, CGST, SGST/UTGST, cess) for every category, ITC as per 2B against ITC as per books, and the ITC claimable now: matched invoices that the 2B marks as available.</p>
+          <p>Below that is ITC by supplier GSTIN, largest difference first: claimable, to review, in 2B but not in the books, and at risk because it is not in the 2B. Rows the add-on skipped are listed at the end; glance at them to make sure nothing real was left out.</p>
+        </dd>
+      </div>
+      <div>
+        <dt>Matched</dt>
+        <dd>
+          <p>Pairs matched exactly, or within tolerance, with a note on any small difference, such as an invoice number written differently or a date two days apart.</p>
+          <p><b>What to do:</b> claim the ITC, unless the 2B marks it as not available. Nothing to chase.</p>
+        </dd>
+      </div>
+      <div>
+        <dt>Mismatched</dt>
+        <dd>
+          <p>The same document on both sides, but something differs beyond tolerance. The Reasons column says what, for example:</p>
+          <p class="said">Taxable value differs by ₹1000.00<br>Date differs by 18 days<br>Tax head differs: 2B has IGST, books have CGST + SGST<br>GSTIN differs (books 27AAHCR6668F1Z0)</p>
+          <p><b>What to do:</b> pull out the invoice. If the books are wrong (a GSTIN typo, the wrong date, a local purchase booked as interstate), correct the voucher. If the supplier reported it wrong, ask them to amend it in their next GSTR-1; the corrected invoice then comes through in B2BA. Until it is sorted out, claim no more than the 2B shows.</p>
+        </dd>
+      </div>
+      <div>
+        <dt>Missing in 2B</dt>
+        <dd>
+          <p>In the books, not in the 2B. Usually the supplier has not filed GSTR-1 or IFF yet, filed after the cut-off, reported the invoice under another GSTIN, or reported it as a B2C sale. The Next step column reads:</p>
+          <p class="said">Not in 2B: hold this ITC and ask the supplier to report it in GSTR-1/IFF</p>
+          <p><b>What to do:</b> hold the ITC this month and send the supplier the message from Follow-ups. When the invoice appears in a later month's 2B, claim it then; the last date is 30 November after the end of the financial year, or the date you file the annual return if that is earlier (section 16(4)). An entry noted as a possible duplicate is the client's error, not the supplier's: delete the extra voucher.</p>
+        </dd>
+      </div>
+      <div>
+        <dt>Missing in books</dt>
+        <dd>
+          <p>In the 2B, not in the books. The client has not booked it yet, booked it in another month or without the GSTIN, or never received the goods or services. The Next step column reads:</p>
+          <p class="said">In 2B but not in books: confirm receipt, then record it or flag it to the supplier</p>
+          <p><b>What to do:</b> confirm receipt with the client, then record the invoice. If the client never received it, reject it in IMS before filing GSTR-3B, or take it up with the supplier. The tab also carries the 2B's ITC availability, reason and reverse charge columns: do not claim what the 2B marks as not available.</p>
+        </dd>
+      </div>
+      <div>
+        <dt>Follow-ups</dt>
+        <dd>
+          <p>One row per supplier with invoices missing in 2B: the invoice numbers, the ITC on hold, and a message ready to paste into an email or WhatsApp. Possible duplicates are left out.</p>
+          <p class="letter"><span class="letter-cap">Message to supplier, from the add-on's sample data</span>Dear Sharma Steel Traders, the following invoice issued to Demo Client Pvt Ltd (supplier GSTIN 27AAACS1111A1ZA) is not in our GSTR-2B for September 2026: SST/2026/131 dated 30-09-2026, tax ₹2,160.00. Please report it in your GSTR-1 or IFF so we can claim the input tax credit. Thank you.</p>
+        </dd>
+      </div>
+      <div>
+        <dt>Recon history</dt>
+        <dd>
+          <p>One row per run: client, period, counts, ITC as per 2B and as per books, claimable ITC and ITC on hold. It stays in the spreadsheet as the record of what was reconciled and when.</p>
+        </dd>
+      </div>
+    </dl>
+    <p class="note" style="margin-top:28px">Each run replaces the add-on's own result tabs and adds a row to Recon history. The result is a working paper: check the Mismatched and Missing tabs before you claim ITC or file a return.</p>
+  </section>
+
+  <section id="next-month" class="section wrap prose">
+    <h2>Next month</h2>
+    <p>Replace last month's 2B and register tabs with the new month's, keeping the same tab names, and run Reconcile GSTR-2B again. The column mapping is saved in the client's spreadsheet, so there is nothing to set up.</p>
+    <p>Before you book anything from Missing in books, compare it with last month's Missing in 2B. An invoice the supplier reported late shows up in this month's 2B but sits in last month's books: it is not missing, and the ITC you held on it can be claimed now.</p>
+  </section>
+
+  <section id="get" class="section wrap">
+    <div class="cta-sheet">
+      <div>
+        <h2>Reconcile this month's 2B in Google Sheets</h2>
+        <p>GSTR-2B Reconciler does step 4 and writes every tab above: matching, reasons, ITC by supplier and the messages to send. Free for up to 200 invoices a month with every feature; Pro is <span data-price data-inr="999" data-unit=" a year">₹999 a year</span> for unlimited invoices.</p>
+      </div>
+      <p class="actions">
+        <a class="btn btn-primary" href="https://workspace.google.com/marketplace/app/gstr2b_reconciler/1005859264831">Get it for Google Sheets, free</a>
+        <a class="btn" href="./">About the add-on</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="faq" class="section wrap">
+    <div class="section-head">
+      <h2>FAQ</h2>
+    </div>
+    <div class="faq">
+      <div class="qa"><h3>How does fuzzy invoice-number matching work?</h3><p>Invoice numbers are compared ignoring case, spaces, separators and leading zeros, so <code>INV/0045/26-27</code> in the 2B matches <code>inv-45-26-27</code> in the books, and <code>SB00123</code> matches <code>sb 123</code>. The supplier GSTIN must agree, the date must be within 3 days and the taxable value within ₹1; both tolerances can be changed in the sidebar. The same invoice number outside tolerance is reported as Mismatched with the reason, and two suppliers who happen to use the same number are never paired.</p></div>
+      <div class="qa"><h3>How are credit notes and purchase returns handled?</h3><p>The B2B-CDNR and B2B-CDNRA tabs are read along with B2B and B2BA. Credit notes are matched like invoices and count negative in every ITC total. Negative figures in the books always reduce ITC, so a purchase return booked in Tally as a Debit Note with negative amounts matches the supplier's credit note. If the signs disagree (a credit note in the 2B, an entry adding ITC in the books), the pair is Mismatched.</p></div>
+      <div class="qa"><h3>The 2B shows IGST, the books show CGST + SGST. What then?</h3><p>If the tax sits under a different head, the pair is Mismatched with the reason "Tax head differs: 2B has IGST, books have CGST + SGST", even when the invoice otherwise matched exactly. It usually means the place of supply was treated differently: check the invoice, correct the voucher if the books are wrong, and take it up with the supplier if their invoice is.</p></div>
+      <div class="qa"><h3>Which GSTR-2B tables are reconciled?</h3><p>B2B, B2BA, B2B-CDNR and B2B-CDNRA. ISD and IMPG have no supplier invoice to match, and ECO, B2B-DNR and the reversal and rejected tabs are not handled yet.</p></div>
+      <div class="qa"><h3>Can't I do this with VLOOKUP in Excel?</h3><p>For exact matches, yes: join the GSTIN and invoice number into a key on both sides and look each one up. It breaks on real data: <code>INV/0045/26-27</code> against <code>inv-45-26-27</code>, a date a day off, a rupee of rounding, IGST booked as CGST + SGST, a mistyped GSTIN. Those are the cases the add-on handles, in the browser, with no macros, no VBA and no Windows.</p></div>
+      <div class="qa"><h3>What about IMS?</h3><p>The add-on never logs in to the GST portal and never accepts, rejects or files anything. Use the result to decide what to do in IMS. If you act on invoices there after the 2B is generated, recompute GSTR-2B on the portal, download it again and reconcile once more before you file.</p></div>
+      <div class="qa"><h3>Does client data leave Google?</h3><p>No. Invoices, GSTINs and amounts are read and written inside Google Sheets only, and the add-on can open only the spreadsheet it is opened in. The single outside call is the Pro licence check, which sends your licence key to Dodo Payments and nothing else. Details are in the <a href="privacy.html">Privacy Policy</a>.</p></div>
+      <div class="qa"><h3>What does it cost?</h3><p>Free for up to 200 invoices a month, with every matching rule and every result tab. Pro is <span data-price data-inr="999" data-unit=" a year">₹999 a year</span> for unlimited invoices, with a 14-day money-back guarantee. A matched or mismatched pair counts once, as does each unmatched invoice on either side, and re-running the same 2B in the same month is not counted again. See <a href="./#pricing">pricing</a>.</p></div>
+    </div>
+    <p class="note" data-price-note hidden></p>
+    <p class="note" style="margin-top:28px">This guide is general information for practitioners, not legal advice; check the current law and the portal for each client's case. GSTR-2B Reconciler is an independent tool, not affiliated with or endorsed by the Goods and Services Tax Network, CBIC, the Government of India or Google.</p>
+  </section>
+</main>
+
+<footer class="wrap">
+  <div class="foot-row">
+    <p>© <span id="y">2026</span> GSTR-2B Reconciler, made by <a href="../">Creet</a></p>
+    <nav aria-label="Legal">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="refunds.html">Refunds</a>
+      <a id="mail" href="mailto:support@creet.in">support@creet.in</a>
+    </nav>
+    <p class="fine">Google Sheets™ and Google Workspace™ are trademarks of Google LLC. This add-on is not made or endorsed by Google.</p>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script src="../theme.js"></script>
+<script src="../prices.js"></script>
+</body>
+</html>
