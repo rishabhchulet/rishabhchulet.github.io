@@ -9,10 +9,12 @@ deploys it.
 | `index.html`, `icon.svg` | Home page listing the five products with their status, and the Creet icon |
 | `styles.css` | Shared stylesheet for every page, including `gstr2b/` (linked as `../styles.css`) |
 | `gstr2b/` | GSTR-2B Reconciler: home, privacy, terms, refunds, post-purchase page |
+| `gstr2b/guide.html` | SEO guide, "How to reconcile GSTR-2B with the purchase register in Google Sheets": the portal download, the Tally/Busy/Zoho export, the import settings and what to do with each result tab, ending at the Marketplace listing. Add-on facts follow the add-on's README; keep them in step |
 | `resource-lens/` | Resource Lens (PhpStorm plugin): overview, EULA, privacy; `lens.css` adds its teal carbon colour. Its Marketplace listing uses `https://creet.in/resource-lens/` (website), `.../eula.html` (licence) and `.../privacy.html` |
 | `returns-portal/` | Returns Portal (Wix App Market app): overview, privacy, terms, support; `returns.css` adds its azure (Wix blue) colour. The overview's five screenshots, `img/shot-1-dashboard.png` to `img/shot-5-rules.png` (4:3, 1600x1200), are added separately: until then the gallery shows their alt text. Its listing uses `https://creet.in/returns-portal/` (website), `.../privacy.html`, `.../terms.html` and `.../support.html` |
 | `CNAME` | `creet.in`, so GitHub Pages serves the site on the custom domain |
 | `.nojekyll` | Serve files as they are (no Jekyll processing) |
+| `sitemap.xml`, `robots.txt` | Every public page for search engines, and the pointer to the sitemap. Add a `<url>` for each new page |
 
 ITR Desk and Dispatch Desk are not copied here. They stay in their own repositories
 (`itr-desk` from `main` `/docs`, `dispatch-desk` from `main` root). Once this user site has the

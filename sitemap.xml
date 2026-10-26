@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Every public page on creet.in. The thanks.html pages are left out: they carry noindex.
+     itr-desk/ and dispatch-desk/ come from their own repositories but are served on this domain. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://creet.in/</loc></url>
+
+  <url><loc>https://creet.in/gstr2b/</loc></url>
+  <url><loc>https://creet.in/gstr2b/guide.html</loc></url>
+  <url><loc>https://creet.in/gstr2b/privacy.html</loc></url>
+  <url><loc>https://creet.in/gstr2b/terms.html</loc></url>
+  <url><loc>https://creet.in/gstr2b/refunds.html</loc></url>
+
+  <url><loc>https://creet.in/itr-desk/</loc></url>
+  <url><loc>https://creet.in/itr-desk/privacy.html</loc></url>
+  <url><loc>https://creet.in/itr-desk/terms.html</loc></url>
+  <url><loc>https://creet.in/itr-desk/refunds.html</loc></url>
+
+  <url><loc>https://creet.in/dispatch-desk/</loc></url>
+  <url><loc>https://creet.in/dispatch-desk/privacy.html</loc></url>
+  <url><loc>https://creet.in/dispatch-desk/terms.html</loc></url>
+  <url><loc>https://creet.in/dispatch-desk/refunds.html</loc></url>
+
+  <url><loc>https://creet.in/resource-lens/</loc></url>
+  <url><loc>https://creet.in/resource-lens/eula.html</loc></url>
+  <url><loc>https://creet.in/resource-lens/privacy.html</loc></url>
+
+  <url><loc>https://creet.in/returns-portal/</loc></url>
+  <url><loc>https://creet.in/returns-portal/privacy.html</loc></url>
+  <url><loc>https://creet.in/returns-portal/terms.html</loc></url>
+  <url><loc>https://creet.in/returns-portal/support.html</loc></url>
+</urlset>
