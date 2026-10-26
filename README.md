@@ -35,7 +35,6 @@ grep -rn "TODO" --include=*.html .
 | `TODO: legal name of the owner or business` | gstr2b privacy, terms | Legal name or registered business name |
 | `TODO: postal address` | gstr2b privacy, terms | A contact address |
 | `TODO: support email`, `mailto:TODO_SUPPORT_EMAIL` | every page | e.g. `support@creet.in` (forwarded to your inbox, below) |
-| `TODO_MARKETPLACE_LISTING_URL` | gstr2b index (2 buttons) | The Marketplace listing URL once it exists; until then `#pricing` |
 | `<!-- TODO WIX_LISTING_URL ... -->` | returns-portal index (hero button, `href="#"`) | The Wix App Market listing URL; then delete the comment |
 
 Also set the "Last updated" date on the privacy, terms and refunds pages to the publish day.
@@ -72,6 +71,7 @@ URLs for the Google OAuth consent screen and the Marketplace listing:
 | Terms of service | `https://creet.in/gstr2b/terms.html` |
 | Authorized domain | `creet.in` |
 | Support | `support@creet.in` |
+| Marketplace listing (live since 26 Oct 2026; the home page and both install buttons on `gstr2b/` link here) | `https://workspace.google.com/marketplace/app/gstr2b_reconciler/1005859264831` |
 
 ## Design
 
