@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000">
+  <!--
+    "Pickup Points for Packeta" app icon (generic mark: map pin + parcel).
+    Not a Packeta logo. Palette (also used by templates/*.html):
+      navy   #1B2252  background + parcel body
+      mint   #7CCB9F  map pin
+      yellow #F9D86E  parcel lid (accent)
+    Solid full-bleed background on purpose: Wix crops icons into rounded squares.
+  -->
+  <rect width="1000" height="1000" fill="#1B2252"/>
+
+  <!-- Map pin: head circle centre (500,425) r=250, rounded tip at ~(500,840) -->
+  <path fill="#7CCB9F"
+        d="M704.6 568.7 A250 250 0 1 0 295.4 568.7 L472.4 820.7 Q500 860 527.6 820.7 Z"/>
+
+  <!-- Parcel: isometric cube centred in the pin head, r=145, rounded corners via stroke -->
+  <polygon fill="#1B2252" stroke="#1B2252" stroke-width="26" stroke-linejoin="round"
+           points="500 280 625.6 352.5 625.6 497.5 500 570 374.4 497.5 374.4 352.5"/>
+  <!-- Lid (top face) -->
+  <polygon fill="#F9D86E" points="500 280 625.6 352.5 500 425 374.4 352.5"/>
+  <!-- Face separations, cut out in the pin colour. They run 40 units past the cube corners so
+       they cut cleanly through the rounded outline (the overshoot lands on the same-colour pin). -->
+  <g fill="none" stroke="#7CCB9F" stroke-width="26">
+    <polyline points="339.8 332.5 500 425 660.2 332.5" stroke-linejoin="miter"/>
+    <line x1="500" y1="425" x2="500" y2="610"/>
+  </g>
+</svg>
