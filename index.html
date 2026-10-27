@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script>try{var t=localStorage.getItem('creet-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <title>Creet – small tools for CAs, truck dispatchers, Laravel developers and Wix stores</title>
-<meta name="description" content="Creet makes small, focused tools: a GSTR-2B reconciliation add-on for Google Sheets and an Income Tax portal extension for chartered accountants in India, a Chrome side panel for US truck dispatchers, a free PhpStorm plugin for Laravel developers building Filament panels, and a returns and exchanges app for Wix Stores.">
+<meta name="description" content="Creet makes small, focused tools: a GSTR-2B reconciliation add-on for Google Sheets and an Income Tax portal extension for chartered accountants in India, a Chrome side panel for US truck dispatchers, a free PhpStorm plugin for Laravel developers building Filament panels, and two apps for Wix Stores: returns and exchanges, and Packeta pickup points at checkout.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://creet.in/">
 <meta property="og:title" content="Creet – small tools for CAs, truck dispatchers, Laravel developers and Wix stores">
@@ -46,6 +46,7 @@
 
     <figure class="stack">
       <div class="sheets" aria-hidden="true">
+        <div class="copy copy-kraft"></div>
         <div class="copy copy-azure"></div>
         <div class="copy copy-teal"></div>
         <div class="copy copy-green"></div>
@@ -61,6 +62,7 @@
             <div class="field"><dt><span class="sw sw-green"></span>Rate per mile</dt><dd><span class="typed" style="--n:12;--d:2.5s">$2.47 all-in</span></dd></div>
             <div class="field"><dt><span class="sw sw-teal"></span>Model attribute</dt><dd><span class="typed" style="--n:11;--d:3s">author.name</span></dd></div>
             <div class="field"><dt><span class="sw sw-azure"></span>Return reason</dt><dd><span class="typed" style="--n:10;--d:3.45s">Wrong size</span></dd></div>
+            <div class="field"><dt><span class="sw sw-kraft"></span>Pickup point</dt><dd><span class="typed" style="--n:13;--d:3.9s">Z-BOX Praha 2</span></dd></div>
             <div class="field field-status"><dt>Status</dt><dd><span class="stamp">Done</span></dd></div>
           </dl>
         </div>
@@ -72,6 +74,7 @@
           <li><a href="#dispatch-desk"><span class="sw sw-green"></span>Dispatch Desk</a></li>
           <li><a href="#resource-lens"><span class="sw sw-teal"></span>Resource Lens</a></li>
           <li><a href="#returns-portal"><span class="sw sw-azure"></span>Returns Portal</a></li>
+          <li><a href="#pickup-points"><span class="sw sw-kraft"></span>Pickup Points for Packeta</a></li>
         </ul>
       </figcaption>
     </figure>
@@ -79,8 +82,8 @@
 
   <section id="tools" class="section wrap">
     <div class="section-head">
-      <h2>Five tools, one job each.</h2>
-      <p>Two for tax practices in India, one for freight dispatch in the US, one for Laravel developers and one for Wix store owners. Every tool is free to start, and Resource Lens is free outright.</p>
+      <h2>Six tools, one job each.</h2>
+      <p>Two for tax practices in India, one for freight dispatch in the US, one for Laravel developers and two for Wix store owners. Every tool is free to start, and Resource Lens and Pickup Points for Packeta are free outright.</p>
     </div>
     <ul class="tools">
       <li class="tool tool-yellow" id="gstr2b">
@@ -145,6 +148,18 @@
           <!-- PRICING:END -->
         </dl>
       </li>
+      <li class="tool tool-kraft" id="pickup-points">
+        <h3>Pickup Points for Packeta</h3>
+        <p class="what">The nearest Packeta pickup points and Z-BOX lockers as delivery options in your Wix Stores checkout, with an optional Packeta map. The chosen point is saved on the order.</p>
+        <p class="tool-state"><span class="tool-stamp">Live</span><span>Install from the <a href="https://www.wix.com/app-market/creet-pickup-points-for-packeta">Wix App Market</a>.</span></p>
+        <a class="btn" href="pickup-points-for-packeta/">See Pickup Points for Packeta</a>
+        <dl class="fields">
+          <div><dt>For</dt><dd>Wix stores shipping with Packeta</dd></div>
+          <div><dt>Runs in</dt><dd>Wix Stores checkout</dd></div>
+          <div><dt>Countries</dt><dd>CZ, SK, HU, PL, RO</dd></div>
+          <div><dt>Price</dt><dd>Free</dd></div>
+        </dl>
+      </li>
     </ul>
     <p class="note" data-price-note hidden></p>
   </section>
@@ -158,7 +173,7 @@
       <li>
         <svg class="tick" viewBox="0 0 30 30" aria-hidden="true"><rect x="1" y="1" width="28" height="28" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7.5 15.5l5 5L23 9" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <h3>Your data stays with you</h3>
-        <p>Client lists, carrier profiles and invoices live in your browser or your spreadsheet, and your code never leaves your machine. Returns Portal keeps its return requests on the store's own Wix site. There is no Creet server holding any of it.</p>
+        <p>Client lists, carrier profiles and invoices live in your browser or your spreadsheet, and your code never leaves your machine. Returns Portal keeps its return requests on the store's own Wix site, and Pickup Points for Packeta keeps its settings there too. There is no Creet server holding any of it.</p>
       </li>
       <li>
         <svg class="tick" viewBox="0 0 30 30" aria-hidden="true"><rect x="1" y="1" width="28" height="28" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7.5 15.5l5 5L23 9" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -168,7 +183,7 @@
       <li>
         <svg class="tick" viewBox="0 0 30 30" aria-hidden="true"><rect x="1" y="1" width="28" height="28" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7.5 15.5l5 5L23 9" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <h3>Free to start</h3>
-        <p>Each tool has a free plan, and Resource Lens is free outright. Pro on the Chrome extensions and the Google Sheets add-on is a licence key bought through Dodo Payments, with a 14-day money-back guarantee. Returns Portal's Pro plan is billed by Wix.</p>
+        <p>Each tool has a free plan, and Resource Lens and Pickup Points for Packeta are free outright. Pro on the Chrome extensions and the Google Sheets add-on is a licence key bought through Dodo Payments, with a 14-day money-back guarantee. Returns Portal's Pro plan is billed by Wix.</p>
       </li>
     </ul>
   </section>
@@ -192,8 +207,9 @@
       <a href="dispatch-desk/">Dispatch Desk</a>
       <a href="resource-lens/">Resource Lens</a>
       <a href="returns-portal/">Returns Portal</a>
+      <a href="pickup-points-for-packeta/">Pickup Points for Packeta</a>
     </nav>
-    <p class="fine">Google Sheets™ and Google Workspace™ are trademarks of Google LLC. Creet is not affiliated with Google.</p>
+    <p class="fine">Google Sheets™ and Google Workspace™ are trademarks of Google LLC. Creet is not affiliated with Google, and not affiliated with or endorsed by Packeta.</p>
   </div>
 </footer>
 <script>

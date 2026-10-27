@@ -1,0 +1,51 @@
+/* Pickup Points for Packeta pages: the shared styles.css plus this tool's carbon colour (kraft, the
+   brown of a parcel box), the example checkout and the screenshot gallery. */
+:root{
+  --kraft:#ecdcc6;--kraft-mark:#9a5f26;--copy-kraft:#ecdcc6;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--kraft:#3a2b1e;--kraft-mark:#e2a465;--copy-kraft:#6b4e35}
+}
+:root[data-theme="dark"]{--kraft:#3a2b1e;--kraft-mark:#e2a465;--copy-kraft:#6b4e35}
+
+.sw-kraft{background:var(--kraft-mark)}
+.legal .notice{background:var(--kraft)}
+figure{margin:0}
+figcaption{margin-top:18px;font-size:14px;color:var(--ink-soft)}
+
+/* Example of the checkout's delivery step, drawn in HTML */
+.checkout-frame{border:1.5px solid var(--ink);border-radius:4px;background:var(--sheet);overflow:hidden;box-shadow:10px 10px 0 var(--copy-kraft)}
+.checkout-bar{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 14px;padding:9px 14px;border-bottom:1px solid var(--rule);font-size:13px;color:var(--ink-soft)}
+.checkout-bar b{color:var(--ink);font-weight:600}
+.checkout-body{padding:14px 18px 20px}
+.checkout-label{margin:0 0 8px;font-size:14px;color:var(--ink-soft)}
+.options{margin:0;padding:0;list-style:none;border:1px solid var(--rule);border-radius:4px}
+.options li{display:grid;grid-template-columns:18px minmax(0,1fr) auto;gap:4px 12px;align-items:start;padding:11px 12px;border-top:1px solid var(--rule)}
+.options li:first-child{border-top:0}
+.options .on{background:var(--kraft);box-shadow:inset 0 0 0 1.5px var(--kraft-mark)}
+.options .radio{width:16px;height:16px;margin-top:3px;border:1.5px solid var(--ink-soft);border-radius:50%}
+.options .on .radio{border-color:var(--kraft-mark);box-shadow:inset 0 0 0 3px var(--sheet),inset 0 0 0 8px var(--kraft-mark)}
+.options b{display:block;font-size:15px;font-weight:600;line-height:1.35}
+.options small{display:block;margin-top:2px;font-size:13px;color:var(--ink-soft)}
+.options .cost{font:400 15px/1.35 var(--typed);color:var(--blue);white-space:nowrap}
+.pick{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:16px 0 0;font-size:14px;color:var(--ink-soft)}
+.pick span:first-child{display:inline-block;padding:9px 16px;border-radius:4px;background:var(--ink);color:var(--paper);font-weight:700;font-size:15px}
+
+/* Screenshot gallery: two 4:3 images side by side */
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 32px;margin:0;padding:0;list-style:none}
+.gallery li{min-width:0}
+.shot a{display:block;border:1.5px solid var(--ink);border-radius:4px;overflow:hidden;background:var(--kraft);box-shadow:8px 8px 0 var(--copy-kraft);color:var(--ink-soft);font-size:14px}
+.shot img{width:100%;height:auto;aspect-ratio:4 / 3;object-fit:cover}
+.shot figcaption{margin-top:16px}
+.shot figcaption b{display:block;margin-bottom:2px;color:var(--ink);font-size:17px;font-weight:700}
+.shot figcaption span{display:block;color:var(--ink-soft)}
+
+@media (max-width:960px){
+  .gallery{gap:32px 24px}
+}
+@media (max-width:560px){
+  .checkout-body{padding:12px 14px 18px}
+  .options li{padding:10px}
+  .gallery{grid-template-columns:minmax(0,1fr);gap:32px}
+  .shot a{box-shadow:6px 6px 0 var(--copy-kraft)}
+}
