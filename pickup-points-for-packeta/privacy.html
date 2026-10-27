@@ -35,7 +35,7 @@
 <article class="legal">
 
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: 27 October 2026</p>
+  <p class="updated">Last updated: 28 October 2026</p>
 
   <p>This policy explains what data the Wix app "Pickup Points for Packeta" (the "app") processes and why. The app is made by Creet (<a href="../">creet.in</a>), an individual developer in India. Contact: <a href="mailto:support@creet.in">support@creet.in</a>.</p>
   <p>The app is not affiliated with or endorsed by Packeta (Zásilkovna s.r.o.).</p>
@@ -45,13 +45,14 @@
     <li><strong>Merchants:</strong> Wix site owners who install the app.</li>
     <li><strong>Shoppers:</strong> people who check out on a merchant's Wix store.</li>
   </ul>
-  <p>The merchant decides to use the app on their store. For shopper data, we process it only to provide the app to that merchant.</p>
+  <p>The merchant decides to use the app on their store and decides which orders to send with Packeta. For shopper data, the app acts on the merchant's instructions, and we process it only to provide the app to that merchant.</p>
 
   <h2>What data the app processes</h2>
   <h3>From merchants</h3>
   <ul>
     <li>Your Packeta API key.</li>
-    <li>Your settings: destination countries, the price shown to shoppers, and whether to offer Z-BOX lockers.</li>
+    <li>Your Packeta API password, if you enter one: it lets the app create packets and print labels in your Packeta account.</li>
+    <li>Your settings: destination countries, the price shown to shoppers, whether to offer Z-BOX lockers, your Packeta sender name, the default parcel weight, the label format, whether to send cash-on-delivery amounts, and whether to create packets automatically.</li>
   </ul>
   <h3>From Wix during checkout</h3>
   <ul>
@@ -61,38 +62,46 @@
   <ul>
     <li>The pickup point the shopper picks is stored on the cart or order (in its extended fields), so the merchant can see where to send the parcel.</li>
   </ul>
+  <h3>Orders you send with Packeta through the app</h3>
+  <ul>
+    <li>For these orders: the recipient's first and last name, email, phone number and company, the order number, the order value and currency, any cash-on-delivery amount, the parcel weight and the chosen pickup point.</li>
+    <li>Wix sends the order to the app when you check or create a packet, or when an order is approved if automatic creation is on. The app uses only the fields above.</li>
+  </ul>
 
   <h2>How the data is used</h2>
-  <p>Only to show Packeta pickup points as delivery options, to check the shopper's choice, and to record it on the order. We do not sell data. We do not use it for advertising.</p>
+  <p>To show Packeta pickup points as delivery options, to check the shopper's choice and record it on the order, and to create the Packeta packet for an order, print its label and add tracking to the order. We do not sell data. We do not use it for advertising.</p>
 
   <h2>Where the data is stored</h2>
   <ul>
     <li>The app runs on Wix's own app hosting. Creet has no server and no separate database.</li>
-    <li>Your API key and settings are stored on your own Wix site, in a collection that only site admins and the app can read.</li>
+    <li>Your API key, API password and settings are stored on your own Wix site, in a collection that only site admins and the app can read. The API password is stored as plain text.</li>
     <li>The chosen pickup point is stored on the Wix cart or order.</li>
-    <li>Wix may keep technical logs of the app's backend under Wix's own policies.</li>
+    <li>When a packet is created, its packet number and barcode are saved on the order, and its tracking number is added to the order's fulfillment. Labels go straight to your browser; the app does not keep them.</li>
+    <li>Wix may keep technical logs of the app's backend under Wix's own policies. The app's log lines name order and packet numbers, not shoppers.</li>
   </ul>
 
   <h2>Who else receives data</h2>
   <ul>
     <li><strong>Wix</strong> hosts the app and stores the data. Wix's privacy policy applies to Wix.</li>
     <li><strong>Packeta.</strong> The app calls Packeta's public APIs with your API key: the pickup-point list (with the destination country) and the check of the chosen point (with that point). If you add the checkout map, Packeta's map loads from Packeta in the shopper's browser, and what the shopper does in it is handled by Packeta under Packeta's own privacy policy.</li>
-    <li><strong>Shoppers' browsers.</strong> The checkout map needs your API key, so the app sends the key, your countries and your Z-BOX setting to the storefront.</li>
+    <li><strong>Packeta, for packets.</strong> Packeta receives the order data listed above when you check a packet's data or a packet is created, either when you click Create packet or automatically if you turn that on. Packeta handles it as your carrier under your contract with Packeta. Labels are fetched from Packeta.</li>
+    <li><strong>Shoppers' browsers.</strong> The checkout map needs your API key, so the app sends the key, your countries and your Z-BOX setting to the storefront. The API password is never sent there.</li>
   </ul>
   <p>We share data with no one else.</p>
 
   <h2>How long it is kept</h2>
   <ul>
     <li>Your settings stay on your site until you change them or the app's data is removed. If you uninstall the app, you can ask us to help remove its settings from your site; contact <a href="mailto:support@creet.in">support@creet.in</a>.</li>
-    <li>The chosen pickup point stays on the order as part of your order records.</li>
+    <li>The chosen pickup point, the packet number and barcode, and the tracking number stay on the order as part of your order records.</li>
+    <li>Packeta keeps packet data under its own policies and your contract with Packeta.</li>
   </ul>
 
   <h2>Security</h2>
-  <p>Data travels over HTTPS. Access to the settings is limited to site admins and the app. The app does not add its own encryption to the stored API key.</p>
+  <p>Data travels over HTTPS. Access to the settings is limited to site admins and the app. The app does not add its own encryption to the stored API key or API password.</p>
 
   <h2>Your choices and rights</h2>
   <ul>
-    <li>Merchants can change or delete their settings on the app's dashboard page, or uninstall the app.</li>
+    <li>Merchants can change their settings and replace the API password on the app's dashboard page, or uninstall the app. To have a stored API password removed, email us and we will help.</li>
     <li>Shoppers should contact the store they bought from, since the store controls its order data. You can also write to us.</li>
     <li>If you email us, we receive what you send and use it only to answer you.</li>
   </ul>
