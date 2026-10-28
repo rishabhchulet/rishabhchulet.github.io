@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script>try{var t=localStorage.getItem('creet-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <title>Pickup Points for Packeta – Packeta pickup points in the Wix Stores checkout</title>
-<meta name="description" content="Pickup Points for Packeta is a free Wix App Market app. It shows the nearest Packeta pickup points and Z-BOX lockers as delivery options in your Wix Stores checkout, with an optional Packeta map, and saves the chosen point on the order.">
+<meta name="description" content="Pickup Points for Packeta is a free Wix App Market app. It shows the nearest Packeta pickup points and Z-BOX lockers as delivery options in your Wix Stores checkout, with an optional Packeta map, saves the chosen point on the order, and creates the Packeta packet and label from your dashboard.">
 <link rel="canonical" href="https://creet.in/pickup-points-for-packeta/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://creet.in/pickup-points-for-packeta/">
@@ -46,7 +46,7 @@
     <div>
       <p class="kind"><span class="sw sw-kraft"></span>Free Wix App Market app for Wix Stores</p>
       <h1 class="ruled">Packeta pickup points in your Wix checkout.</h1>
-      <p class="lead">Pickup Points for Packeta shows the Packeta pickup points nearest to the shopper's address as delivery options in your Wix Stores checkout, each with its address and your price. Shoppers can also open Packeta's map and choose any point or Z-BOX locker. The chosen point is saved on the order, so you know where each parcel should go.</p>
+      <p class="lead">Pickup Points for Packeta shows the Packeta pickup points nearest to the shopper's address as delivery options in your Wix Stores checkout, each with its address and your price. Shoppers can also open Packeta's map and choose any point or Z-BOX locker. The chosen point is saved on the order, and when you ship, the app can create the Packeta packet and its label and add the tracking number to the order.</p>
       <p class="actions">
         <a class="btn btn-primary" href="https://www.wix.com/app-market/creet-pickup-points-for-packeta">Get it on the Wix App Market</a>
         <a class="btn" href="#how">See how it works</a>
@@ -73,7 +73,7 @@
   <section id="screens" class="section wrap">
     <div class="section-head">
       <h2>What it looks like</h2>
-      <p>The delivery step in a Wix Stores checkout, and the app's page in your Wix dashboard. The store and shopper are made up; the screens are the real app.</p>
+      <p>The delivery step in a Wix Stores checkout, Packeta's map, and the app's page in your Wix dashboard. The store and shopper are made up; the screens are the real app.</p>
     </div>
     <ul class="gallery">
       <li>
@@ -84,8 +84,20 @@
       </li>
       <li>
         <figure class="shot">
+          <a href="img/shot-3-map.png" target="_blank" rel="noopener"><img src="img/shot-3-map.png" width="1600" height="1200" loading="lazy" decoding="async" alt="Packeta's map opened from the checkout: a list of pickup points in Praha 2 on the left, each with its address and distance, and a street map with the points marked on the right."></a>
+          <figcaption><b>Packeta's map</b><span>Shoppers can search all points, including Z-BOX lockers.</span></figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure class="shot">
           <a href="img/shot-2-settings.png" target="_blank" rel="noopener"><img src="img/shot-2-settings.png" width="1600" height="1200" loading="lazy" decoding="async" alt="The app's page in the Wix dashboard: the Checkout card with the countries CZ and SK, a price of 3 and Offer Z-BOX lockers ticked, and the Map picker at checkout card with an Add to checkout button."></a>
           <figcaption><b>Dashboard</b><span>Your countries, your price, Z-BOX on or off, and the map.</span></figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure class="shot">
+          <a href="img/shot-4-packets.png" target="_blank" rel="noopener"><img src="img/shot-4-packets.png" width="1600" height="1200" loading="lazy" decoding="async" alt="The Packets card on the app's dashboard page: order number 10001 typed in, with the buttons Check packet data, Create packet and Label PDF."></a>
+          <figcaption><b>Packets</b><span>Check the data, create the packet and print its label.</span></figcaption>
         </figure>
       </li>
     </ul>
@@ -94,7 +106,7 @@
   <section id="features" class="section wrap">
     <div class="section-head">
       <h2>What the app does</h2>
-      <p>Pickup-point delivery from your own Packeta account, chosen at checkout and kept on the order.</p>
+      <p>Pickup-point delivery from your own Packeta account, chosen at checkout and kept on the order, and the packet and label when you ship.</p>
     </div>
     <dl class="spec">
       <div><dt>The nearest points at checkout</dt><dd>When a shopper enters a delivery address, the app asks Packeta for the 5 pickup points nearest to it and lists them under Pickup in the delivery step. Each one shows as "Packeta pickup point:" with its name and address, and the price you set. If you offer Z-BOX lockers, they can be among them.</dd></div>
@@ -102,7 +114,8 @@
       <div><dt>Saved on the order</dt><dd>The chosen point's ID, name and address are stored with the cart and carried over to the order. In your Wix orders the delivery shows as pickup at that point's address, so you can see where each parcel should go.</dd></div>
       <div><dt>Your own Packeta account</dt><dd>The app works with your Packeta contract and your API key, which you find in Packeta's client section at client.packeta.com. Paste the key on the app's dashboard page, choose the destination countries (the Czech Republic, Slovakia, Hungary, Poland and Romania), set one price in your site currency, and decide whether to offer Z-BOX lockers.</dd></div>
       <div><dt>A backup rate</dt><dd>Wix asks for a backup rate when you turn the app on for a shipping region. If Packeta's list of points can't be reached, shoppers see that rate instead of the pickup points.</dd></div>
-      <div><dt>What it leaves to you</dt><dd>The app does not create Packeta shipments or print labels. You create the parcel in Packeta as you do today, using the pickup point shown on the order.</dd></div>
+      <div><dt>Packets and labels</dt><dd>Type an order number on the Packets card of the app's dashboard page. "Check packet data" asks Packeta to check the packet without creating it, "Create packet" creates it in your Packeta account for the shopper's pickup point, and "Label PDF" downloads its label. The tracking number is added to the order, which then shows as fulfilled, and Wix emails the shopper its shipping confirmation with the tracking link. This needs your Packeta API password, an approved Packeta account and a store currency Packeta accepts (CZK, EUR, HUF, PLN or RON).</dd></div>
+      <div><dt>What it leaves to you</dt><dd>You create packets one order at a time, when you choose to. Handing the parcels to Packeta, and your contract and prices with Packeta, stay as they are today.</dd></div>
     </dl>
   </section>
 
@@ -113,7 +126,7 @@
     <ol class="steps">
       <li><h3>Turn it on for a region</h3><p>Install the app from the Wix App Market. In your Wix dashboard, go to Settings &gt; Shipping &amp; delivery, open a shipping region, turn on Pickup Points for Packeta under Manage apps and set a backup rate.</p></li>
       <li><h3>Add your Packeta key</h3><p>On the app's dashboard page, paste your Packeta API key, choose your countries, set your price and decide on Z-BOX. Click "Add to checkout" if you also want the map.</p></li>
-      <li><h3>Shoppers pick a point</h3><p>At checkout, shoppers pick one of the nearest points or choose one on Packeta's map. The point and its address are saved on the order.</p></li>
+      <li><h3>Shoppers pick a point</h3><p>At checkout, shoppers pick one of the nearest points or choose one on Packeta's map. The point and its address are saved on the order. When you ship, create the packet and its label on the app's dashboard page.</p></li>
     </ol>
     <p class="note">You need a Wix site with Wix Stores and your own Packeta account. The app is free; what you pay Packeta for shipping stays between you and Packeta.</p>
   </section>
@@ -128,8 +141,8 @@
       <div class="qa"><h3>What does it cost?</h3><p>Nothing. The app is free. Packeta charges you for the parcels under your own contract, as before.</p></div>
       <div class="qa"><h3>Can shoppers choose a Z-BOX?</h3><p>Yes, if you tick "Offer Z-BOX lockers" on the app's dashboard page. Lockers can then appear among the nearest points and on Packeta's map. Untick it and only pickup points without lockers are offered.</p></div>
       <div class="qa"><h3>What if Packeta can't be reached?</h3><p>Shoppers see the backup rate you set for the shipping region in Wix instead of the pickup points, so checkout still offers a way to deliver.</p></div>
-      <div class="qa"><h3>Does it create shipments or labels?</h3><p>No. It shows pickup points and records the shopper's choice on the order. You create the parcel in Packeta yourself, using the point on the order.</p></div>
-      <div class="qa"><h3>What data does it store, and where?</h3><p>Your API key and settings, in a collection on your own Wix site that only site admins and the app can read, and the chosen point on the cart and order. The app runs on Wix's app hosting; there is no Creet server. To show Packeta's map, the storefront receives your API key, countries and Z-BOX setting. See the <a href="privacy.html">Privacy Policy</a>.</p></div>
+      <div class="qa"><h3>Does it create shipments or labels?</h3><p>Yes: from the app's dashboard, one order at a time. You can check the packet data with Packeta first. The packet's tracking number is added to the order, and Wix emails the shopper its shipping confirmation. You need your Packeta API password and an approved Packeta account.</p></div>
+      <div class="qa"><h3>What data does it store, and where?</h3><p>Your API key, API password and settings, in a collection on your own Wix site that only site admins and the app can read; the chosen point on the cart and order; and, once you create a packet, its number and barcode on the order. To create a packet, the shopper's name, contact details, the order value and the pickup point go to Packeta. The app runs on Wix's app hosting; there is no Creet server. To show Packeta's map, the storefront receives your API key, countries and Z-BOX setting, never the password. See the <a href="privacy.html">Privacy Policy</a>.</p></div>
       <div class="qa"><h3>Is this an official Packeta app?</h3><p>No. Pickup Points for Packeta is an independent app made by Creet. It is not affiliated with or endorsed by Packeta.</p></div>
     </div>
   </section>
