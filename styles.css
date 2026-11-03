@@ -1,7 +1,8 @@
 /* creet.in shared styles: home page and the GSTR-2B Reconciler pages.
    The look is a stack of carbon-copy forms: navy print, blue typed entries,
    one carbon colour per tool (yellow GSTR-2B, pink ITR Desk, green Dispatch Desk,
-   teal Resource Lens, azure Returns Portal, kraft Pickup Points for Packeta; resource-lens/lens.css,
+   teal Resource Lens, azure Returns Portal, kraft Pickup Points for Packeta, lilac Media Tag Manager;
+   resource-lens/lens.css,
    returns-portal/returns.css and pickup-points-for-packeta/packeta.css repeat their colour for their
    own pages). */
 
@@ -22,6 +23,7 @@
   --teal:#c8ebe5;--teal-mark:#0e8f7e;--copy-teal:#c8ebe5;
   --azure:#d3e5ff;--azure-mark:#116dff;--copy-azure:#d3e5ff;
   --kraft:#ecdcc6;--kraft-mark:#9a5f26;--copy-kraft:#ecdcc6;
+  --lilac:#e4dcf6;--lilac-mark:#7b57c9;--copy-lilac:#e4dcf6;
   --todo-bg:#fef3c7;--todo-text:#92400e;--todo-border:#d97706;
   --font:"Archivo","Segoe UI",system-ui,-apple-system,Roboto,sans-serif;
   --typed:"Courier Prime","Courier New",Courier,monospace;
@@ -46,6 +48,7 @@
     --teal:#163a36;--teal-mark:#33c7b2;--copy-teal:#2a6058;
     --azure:#14294d;--azure-mark:#6aa9ff;--copy-azure:#26467f;
     --kraft:#3a2b1e;--kraft-mark:#e2a465;--copy-kraft:#6b4e35;
+    --lilac:#2a2246;--lilac-mark:#b39af0;--copy-lilac:#4c3d7d;
     --todo-bg:#422006;--todo-text:#fcd34d;
     color-scheme:dark;
   }
@@ -65,6 +68,7 @@
   --teal:#163a36;--teal-mark:#33c7b2;--copy-teal:#2a6058;
   --azure:#14294d;--azure-mark:#6aa9ff;--copy-azure:#26467f;
   --kraft:#3a2b1e;--kraft-mark:#e2a465;--copy-kraft:#6b4e35;
+  --lilac:#2a2246;--lilac-mark:#b39af0;--copy-lilac:#4c3d7d;
   --todo-bg:#422006;--todo-text:#fcd34d;
   color-scheme:dark;
 }
@@ -136,12 +140,13 @@ code{font-family:var(--typed);font-size:.92em;overflow-wrap:anywhere}
 .stack{margin:0}
 .sheets{position:relative;margin:52px 54px 0 0}
 .copy{position:absolute;inset:0;border-radius:4px}
-.copy-kraft{background:var(--copy-kraft);transform:translate(48px,-48px) rotate(6.5deg)}
-.copy-azure{background:var(--copy-azure);transform:translate(40px,-40px) rotate(5.4deg)}
-.copy-teal{background:var(--copy-teal);transform:translate(32px,-32px) rotate(4.3deg)}
-.copy-green{background:var(--copy-green);transform:translate(24px,-24px) rotate(3.2deg)}
-.copy-pink{background:var(--copy-pink);transform:translate(16px,-16px) rotate(2.1deg)}
-.copy-yellow{background:var(--copy-yellow);transform:translate(8px,-8px) rotate(1deg)}
+.copy-lilac{background:var(--copy-lilac);transform:translate(48px,-48px) rotate(6.5deg)}
+.copy-kraft{background:var(--copy-kraft);transform:translate(41px,-41px) rotate(5.6deg)}
+.copy-azure{background:var(--copy-azure);transform:translate(34px,-34px) rotate(4.6deg)}
+.copy-teal{background:var(--copy-teal);transform:translate(27px,-27px) rotate(3.7deg)}
+.copy-green{background:var(--copy-green);transform:translate(20px,-20px) rotate(2.8deg)}
+.copy-pink{background:var(--copy-pink);transform:translate(13px,-13px) rotate(1.8deg)}
+.copy-yellow{background:var(--copy-yellow);transform:translate(7px,-7px) rotate(.9deg)}
 .form{position:relative;background:var(--sheet);border:1.5px solid var(--ink);border-radius:4px;padding:20px 24px 14px}
 .form-title{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin:0;padding-bottom:10px;border-bottom:1.5px solid var(--ink);font-size:20px;font-stretch:75%;font-weight:800}
 .form-title small{font-size:13px;font-stretch:100%;font-weight:500;color:var(--ink-soft)}
@@ -151,10 +156,10 @@ code{font-family:var(--typed);font-size:.92em;overflow-wrap:anywhere}
 .field dd{margin:0;min-height:1.4em}
 .field-status{border-bottom:0;align-items:center;padding:14px 0 4px}
 .sw{flex:none;display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--rule)}
-.sw-yellow{background:var(--yellow-mark)}.sw-pink{background:var(--pink-mark)}.sw-green{background:var(--green-mark)}.sw-teal{background:var(--teal-mark)}.sw-azure{background:var(--azure-mark)}.sw-kraft{background:var(--kraft-mark)}
+.sw-yellow{background:var(--yellow-mark)}.sw-pink{background:var(--pink-mark)}.sw-green{background:var(--green-mark)}.sw-teal{background:var(--teal-mark)}.sw-azure{background:var(--azure-mark)}.sw-kraft{background:var(--kraft-mark)}.sw-lilac{background:var(--lilac-mark)}
 .typed{display:inline-block;vertical-align:bottom;white-space:nowrap;overflow:hidden;font:400 17px/1.35 var(--typed);color:var(--blue);width:calc(var(--n) * 1ch);animation:type calc(var(--n) * 38ms) steps(var(--n),end) var(--d) both}
 @keyframes type{from{width:0}}
-.stamp{display:inline-block;padding:3px 14px 2px;border:3px solid var(--red);border-radius:6px;box-shadow:inset 0 0 0 2px var(--sheet),inset 0 0 0 4px var(--red);color:var(--red);font-size:26px;font-stretch:68%;font-weight:800;letter-spacing:.08em;line-height:1.1;text-transform:uppercase;transform:rotate(-7deg);opacity:.9;animation:stamp .26s cubic-bezier(.3,1.5,.5,1) 4.6s both}
+.stamp{display:inline-block;padding:3px 14px 2px;border:3px solid var(--red);border-radius:6px;box-shadow:inset 0 0 0 2px var(--sheet),inset 0 0 0 4px var(--red);color:var(--red);font-size:26px;font-stretch:68%;font-weight:800;letter-spacing:.08em;line-height:1.1;text-transform:uppercase;transform:rotate(-7deg);opacity:.9;animation:stamp .26s cubic-bezier(.3,1.5,.5,1) 5.15s both}
 @keyframes stamp{from{opacity:0;transform:rotate(-7deg) scale(1.9)}to{opacity:.9;transform:rotate(-7deg) scale(1)}}
 .legend{display:flex;flex-wrap:wrap;gap:6px 20px;margin:20px 0 0;padding:0;list-style:none;font-size:14px}
 .legend a{display:inline-flex;align-items:center;gap:8px;color:var(--ink-soft);text-decoration:none}
@@ -171,7 +176,7 @@ code{font-family:var(--typed);font-size:.92em;overflow-wrap:anywhere}
 /* Tool sheets on the home page */
 .tools{display:grid;gap:22px;margin:0;padding:0;list-style:none}
 .tool{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px 40px;padding:32px 32px 0;border-radius:6px;background:var(--tone)}
-.tool-yellow{--tone:var(--yellow)}.tool-pink{--tone:var(--pink)}.tool-green{--tone:var(--green)}.tool-teal{--tone:var(--teal)}.tool-azure{--tone:var(--azure)}.tool-kraft{--tone:var(--kraft)}
+.tool-yellow{--tone:var(--yellow)}.tool-pink{--tone:var(--pink)}.tool-green{--tone:var(--green)}.tool-teal{--tone:var(--teal)}.tool-azure{--tone:var(--azure)}.tool-kraft{--tone:var(--kraft)}.tool-lilac{--tone:var(--lilac)}
 .tool h3{font-size:clamp(30px,3.4vw,42px);font-stretch:72%;letter-spacing:-.01em}
 .tool .what{grid-column:1;margin:0;max-width:36em;font-size:18px}
 .tool .btn{grid-column:2;grid-row:1 / span 3;align-self:start}
@@ -373,12 +378,13 @@ td code{display:inline-block;margin-top:4px;font-weight:400;color:var(--ink-soft
   .lead{font-size:18px}
   .section{padding-top:64px;padding-bottom:64px}
   .sheets{margin:40px 40px 0 0}
-  .copy-kraft{transform:translate(36px,-36px) rotate(6deg)}
-  .copy-azure{transform:translate(30px,-30px) rotate(5deg)}
-  .copy-teal{transform:translate(24px,-24px) rotate(4deg)}
-  .copy-green{transform:translate(18px,-18px) rotate(3deg)}
-  .copy-pink{transform:translate(12px,-12px) rotate(2deg)}
-  .copy-yellow{transform:translate(6px,-6px) rotate(1deg)}
+  .copy-lilac{transform:translate(35px,-35px) rotate(5.4deg)}
+  .copy-kraft{transform:translate(30px,-30px) rotate(4.6deg)}
+  .copy-azure{transform:translate(25px,-25px) rotate(3.8deg)}
+  .copy-teal{transform:translate(20px,-20px) rotate(3deg)}
+  .copy-green{transform:translate(15px,-15px) rotate(2.2deg)}
+  .copy-pink{transform:translate(10px,-10px) rotate(1.4deg)}
+  .copy-yellow{transform:translate(5px,-5px) rotate(.7deg)}
   .form{padding:16px 16px 10px}
   .field{grid-template-columns:minmax(0,1fr);gap:2px}
   .tool{padding:24px 20px 0}

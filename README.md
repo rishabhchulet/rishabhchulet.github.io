@@ -6,7 +6,7 @@ deploys it.
 
 | Path | What it is |
 |---|---|
-| `index.html`, `icon.svg` | Home page listing the six products with their status, and the Creet icon |
+| `index.html`, `icon.svg` | Home page listing the seven products with their status, and the Creet icon. ITR Desk and Dispatch Desk link their Chrome Web Store, Edge Add-ons (published 3 Nov 2026) and Firefox Add-ons (approved 2 Nov 2026) listings. Media Tag Manager (free Wix App Market app, `https://www.wix.com/app-market/creet-media-tag-manager`) has no page of its own here: its sheet and footer link go to the listing, and its privacy policy is hosted on Wix |
 | `styles.css` | Shared stylesheet for every page, including `gstr2b/` (linked as `../styles.css`) |
 | `gstr2b/` | GSTR-2B Reconciler: home, privacy, terms, refunds, post-purchase page |
 | `gstr2b/guide.html` | SEO guide, "How to reconcile GSTR-2B with the purchase register in Google Sheets": the portal download, the Tally/Busy/Zoho export, the import settings and what to do with each result tab, ending at the Marketplace listing. Add-on facts follow the add-on's README; keep them in step |
@@ -80,7 +80,7 @@ URLs for the Google OAuth consent screen and the Marketplace listing:
 
 The look is a stack of carbon-copy forms. Navy print (`--ink`), entries typed in blue
 (`--blue`, Courier Prime) and one carbon colour per tool: yellow for GSTR-2B Reconciler, pink
-for ITR Desk, green for Dispatch Desk, teal for Resource Lens, azure (Wix blue, `--azure`) for Returns Portal, kraft (parcel-box brown, `--kraft`) for Pickup Points for Packeta. Headings are Archivo at a condensed width (`font-stretch`),
+for ITR Desk, green for Dispatch Desk, teal for Resource Lens, azure (Wix blue, `--azure`) for Returns Portal, kraft (parcel-box brown, `--kraft`) for Pickup Points for Packeta, lilac (`--lilac`) for Media Tag Manager. Headings are Archivo at a condensed width (`font-stretch`),
 loaded from Google Fonts. Every colour is a token at the top of `styles.css`, with a dark
 ("carbon paper") set under `prefers-color-scheme: dark`. The only motion is the hero form
 typing itself in and being stamped; it is off for `prefers-reduced-motion`.
