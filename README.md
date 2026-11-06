@@ -16,6 +16,8 @@ deploys it.
 | `CNAME` | `creet.in`, so GitHub Pages serves the site on the custom domain |
 | `.nojekyll` | Serve files as they are (no Jekyll processing) |
 | `sitemap.xml`, `robots.txt` | Every public page for search engines, and the pointer to the sitemap. Add a `<url>` for each new page |
+| `analytics.js` | Google Analytics 4 for every page on creet.in. Each page, here and in the `dispatch-desk` and `itr-desk` repositories, loads it with `<script src="/analytics.js" async></script>` before `</head>`; add that line to every new page. The measurement ID (`G-77H7NNY4YP`, GA account "Creet" under rishabhchulet777@gmail.com) is set once in this file. It runs only on the creet.in hostname; visitors in the EEA, UK and Switzerland get analytics storage denied (no cookies); ads storage and Google signals are off. Each hit carries a content group named after the product folder (`PRODUCTS` map: add a line for every new product folder). It also adds `utm_source=creet.in&utm_medium=website&utm_campaign=<folder or home>` to links pointing at the Chrome Web Store, Edge Add-ons, Firefox Add-ons, Google Workspace Marketplace, JetBrains Marketplace and the Wix App Market, unless the link already has tags |
+| `privacy.html` | Website privacy notice (Google Analytics, hosting, fonts), linked from the home page footer. Each product's privacy policy has a "This website" section pointing here. Keep it in step with `analytics.js` |
 
 ITR Desk and Dispatch Desk are not copied here. They stay in their own repositories
 (`itr-desk` from `main` `/docs`, `dispatch-desk` from `main` root). Once this user site has the
