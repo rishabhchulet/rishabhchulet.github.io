@@ -71,24 +71,41 @@
   // Send Google only the page address and its campaign tags. Query strings can carry personal or
   // payment data (Dodo Payments returns buyers to thanks.html with payment_id, subscription_id,
   // status and sometimes an email), and Google's terms forbid sending personal data to Analytics.
+  // Google's tag reads the address bar for every hit (page views, clicks, scrolls) and ignores a
+  // page_location set in 'config', so the other parameters are removed from the address itself,
+  // before gtag.js loads. No page on creet.in reads them (Dispatch Desk reads only utm_*).
+  var KEEP = /^utm_(source|medium|campaign|content|term)$/;
   function cleanUrl(href) {
     try {
       var u = new URL(href), keep = [];
       u.searchParams.forEach(function (v, k) {
-        if (/^utm_(source|medium|campaign|content|term)$/.test(k)) keep.push(encodeURIComponent(k) + '=' + encodeURIComponent(v));
+        if (KEEP.test(k)) keep.push(encodeURIComponent(k) + '=' + encodeURIComponent(v));
       });
       return u.origin + u.pathname + (keep.length ? '?' + keep.join('&') : '');
     } catch (e) { return ''; }
   }
+  try {
+    var here = new URL(location.href), drop = [];
+    here.searchParams.forEach(function (v, k) { if (!KEEP.test(k)) drop.push(k); });
+    if (drop.length) {
+      drop.forEach(function (k) { here.searchParams.delete(k); });
+      history.replaceState(history.state, '', here.pathname + here.search + here.hash);
+    }
+  } catch (e) { /* old browser: leave the address alone */ }
 
   gtag('set', 'ads_data_redaction', true);
   gtag('js', new Date());
+  // This gtag build does not attach extra 'config' fields to hits, so the page view is sent
+  // explicitly and carries the content group and the cleaned referrer as event parameters.
   gtag('config', ID, {
-    page_location: cleanUrl(location.href),
-    page_referrer: document.referrer ? cleanUrl(document.referrer) : '',
-    content_group: contentGroup,
+    send_page_view: false,
     allow_google_signals: false,
     allow_ad_personalization_signals: false
+  });
+  gtag('event', 'page_view', {
+    page_location: cleanUrl(location.href),
+    page_referrer: document.referrer ? cleanUrl(document.referrer) : '',
+    content_group: contentGroup
   });
 
   var s = document.createElement('script');
