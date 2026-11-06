@@ -4,14 +4,20 @@
 // - Runs only on creet.in: local previews and the github.io addresses send nothing.
 // - Visitors in the EEA, the UK and Switzerland start with analytics storage denied: no cookies are
 //   set and Google receives only cookieless pings. Elsewhere the usual GA cookies are allowed.
-// - Advertising storage, ad personalisation and Google signals are off everywhere.
-// - Every hit carries a content group naming the product whose pages it came from (Reports →
-//   Engagement → Pages and screens → switch the table to "Content group").
-// - Clicks to other sites (store listings, checkout) are recorded by GA4's enhanced measurement
-//   ("outbound clicks").
+//   Advertising storage and ad personalisation are denied everywhere.
+// - Every query parameter except utm_* is removed from the address before Google's tag loads, so
+//   no payment reference or email (Dodo Payments' return to thanks.html) ever reaches Google.
 // - Links to the stores and marketplaces get utm_source=creet.in, utm_medium=website and
 //   utm_campaign=<product folder, or "home">, unless they already carry tags, so each store's own
 //   dashboard can tell which creet.in page sent the visit.
+//
+// How the tag behaves (tested 6 Nov 2026): G-77H7NNY4YP loads Google tag container GTM-PCP84MF8,
+// which sends the page_view itself and ignores fields passed in gtag('config') (page_location,
+// content_group, send_page_view, allow_google_signals). It does honour the consent defaults below
+// and gtag('event') calls. So: page views are not sent from here (that would double them); the
+// per-product content group is added in Google Analytics (Admin → Data streams → creet.in web →
+// Modify events: page_view + page_location contains "/<folder>/" → content_group); Google signals
+// is off in the property's Data collection settings; outbound clicks come from enhanced measurement.
 (function () {
   if (location.hostname !== 'creet.in') return;
 
@@ -39,19 +45,22 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', tagStoreLinks);
   else tagStoreLinks();
 
+  // ----- Clean the address -----------------------------------------------------------------------
+  // Query strings can carry personal or payment data, and Google's terms forbid sending personal data
+  // to Analytics. The tag reads the address bar for every hit, so the parameters are removed from the
+  // address itself. No page on creet.in reads them (Dispatch Desk reads only utm_*).
+  var KEEP = /^utm_(source|medium|campaign|content|term)$/;
+  try {
+    var here = new URL(location.href), drop = [];
+    here.searchParams.forEach(function (v, k) { if (!KEEP.test(k)) drop.push(k); });
+    if (drop.length) {
+      drop.forEach(function (k) { here.searchParams.delete(k); });
+      history.replaceState(history.state, '', here.pathname + here.search + here.hash);
+    }
+  } catch (e) { /* old browser: leave the address alone */ }
+
   // ----- Google Analytics -----------------------------------------------------------------------
   var ID = 'G-77H7NNY4YP'; // GA4 property "creet.in" (account "Creet", rishabhchulet777@gmail.com)
-  var PRODUCTS = {
-    '': 'Creet home',
-    'privacy.html': 'Creet website',
-    'dispatch-desk': 'Dispatch Desk',
-    'itr-desk': 'ITR Desk',
-    'gstr2b': 'GSTR-2B Reconciler',
-    'resource-lens': 'Resource Lens',
-    'returns-portal': 'Returns Portal',
-    'pickup-points-for-packeta': 'Pickup Points for Packeta'
-  };
-  var contentGroup = Object.prototype.hasOwnProperty.call(PRODUCTS, folder) ? PRODUCTS[folder] : 'Other';
 
   window.dataLayer = window.dataLayer || [];
   function gtag() { window.dataLayer.push(arguments); }
@@ -68,45 +77,9 @@
     ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
     analytics_storage: 'granted'
   });
-  // Send Google only the page address and its campaign tags. Query strings can carry personal or
-  // payment data (Dodo Payments returns buyers to thanks.html with payment_id, subscription_id,
-  // status and sometimes an email), and Google's terms forbid sending personal data to Analytics.
-  // Google's tag reads the address bar for every hit (page views, clicks, scrolls) and ignores a
-  // page_location set in 'config', so the other parameters are removed from the address itself,
-  // before gtag.js loads. No page on creet.in reads them (Dispatch Desk reads only utm_*).
-  var KEEP = /^utm_(source|medium|campaign|content|term)$/;
-  function cleanUrl(href) {
-    try {
-      var u = new URL(href), keep = [];
-      u.searchParams.forEach(function (v, k) {
-        if (KEEP.test(k)) keep.push(encodeURIComponent(k) + '=' + encodeURIComponent(v));
-      });
-      return u.origin + u.pathname + (keep.length ? '?' + keep.join('&') : '');
-    } catch (e) { return ''; }
-  }
-  try {
-    var here = new URL(location.href), drop = [];
-    here.searchParams.forEach(function (v, k) { if (!KEEP.test(k)) drop.push(k); });
-    if (drop.length) {
-      drop.forEach(function (k) { here.searchParams.delete(k); });
-      history.replaceState(history.state, '', here.pathname + here.search + here.hash);
-    }
-  } catch (e) { /* old browser: leave the address alone */ }
-
   gtag('set', 'ads_data_redaction', true);
   gtag('js', new Date());
-  // This gtag build does not attach extra 'config' fields to hits, so the page view is sent
-  // explicitly and carries the content group and the cleaned referrer as event parameters.
-  gtag('config', ID, {
-    send_page_view: false,
-    allow_google_signals: false,
-    allow_ad_personalization_signals: false
-  });
-  gtag('event', 'page_view', {
-    page_location: cleanUrl(location.href),
-    page_referrer: document.referrer ? cleanUrl(document.referrer) : '',
-    content_group: contentGroup
-  });
+  gtag('config', ID, { allow_google_signals: false, allow_ad_personalization_signals: false });
 
   var s = document.createElement('script');
   s.async = true;
