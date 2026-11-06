@@ -68,9 +68,24 @@
     ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
     analytics_storage: 'granted'
   });
+  // Send Google only the page address and its campaign tags. Query strings can carry personal or
+  // payment data (Dodo Payments returns buyers to thanks.html with payment_id, subscription_id,
+  // status and sometimes an email), and Google's terms forbid sending personal data to Analytics.
+  function cleanUrl(href) {
+    try {
+      var u = new URL(href), keep = [];
+      u.searchParams.forEach(function (v, k) {
+        if (/^utm_(source|medium|campaign|content|term)$/.test(k)) keep.push(encodeURIComponent(k) + '=' + encodeURIComponent(v));
+      });
+      return u.origin + u.pathname + (keep.length ? '?' + keep.join('&') : '');
+    } catch (e) { return ''; }
+  }
+
   gtag('set', 'ads_data_redaction', true);
   gtag('js', new Date());
   gtag('config', ID, {
+    page_location: cleanUrl(location.href),
+    page_referrer: document.referrer ? cleanUrl(document.referrer) : '',
     content_group: contentGroup,
     allow_google_signals: false,
     allow_ad_personalization_signals: false
