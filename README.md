@@ -86,3 +86,7 @@ for ITR Desk, green for Dispatch Desk, teal for Resource Lens, azure (Wix blue, 
 loaded from Google Fonts. Every colour is a token at the top of `styles.css`, with a dark
 ("carbon paper") set under `prefers-color-scheme: dark`. The only motion is the hero form
 typing itself in and being stamped; it is off for `prefers-reduced-motion`.
+
+## Services - 7 November 2026
+
+`services/` describes website repairs, business websites and workflow automation, with `support@creet.in` as the enquiry address. The homepage links the services alongside the existing seven products. Services use `services/services.css` plus shared theme styles; `services/contact.js` only copies the public email address. There is no enquiry form backend, checkout or automatic email send. Scope, fee and delivery are agreed per project. The contact example is explicitly illustrative.

@@ -1,0 +1,25 @@
+.service-kicker{font:400 14px/1.4 var(--typed);letter-spacing:.06em;text-transform:uppercase;color:var(--blue);margin-bottom:18px}
+.service-hero{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:56px;align-items:center;padding-top:70px;padding-bottom:64px}
+.service-hero h1{font-size:clamp(46px,6vw,78px);font-stretch:70%;margin-bottom:24px}
+.service-hero .lead{max-width:29em}
+.brief-sheet{border:1.5px solid var(--ink);padding:26px;background:var(--sheet);box-shadow:12px 12px 0 var(--copy-azure)}
+.brief-sheet h2{font-size:25px;border-bottom:1.5px solid var(--ink);padding-bottom:16px}
+.brief-sheet dl{margin:0}.brief-sheet dl>div{padding:17px 0;border-bottom:1px solid var(--rule)}
+.brief-sheet dt{font-size:13px;color:var(--ink-soft);margin-bottom:5px}.brief-sheet dd{font:400 17px/1.4 var(--typed);margin:0}
+.brief-sheet .brief-note{margin:20px 0 0;font-size:14px;color:var(--ink-soft)}
+.service-strip{border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);padding:18px 0;display:flex;flex-wrap:wrap;gap:10px 32px;font-size:14px;font-weight:600}
+.service-list{list-style:none;padding:0;margin:0}.service-list>li{display:grid;grid-template-columns:64px minmax(0,1fr) minmax(0,1fr);gap:24px 32px;padding:36px 0;border-top:1px solid var(--rule)}
+.service-list>li:last-child{border-bottom:1px solid var(--rule)}.service-number{font:400 20px/1.2 var(--typed);color:var(--blue)}
+.service-list h3{font-size:32px;margin-bottom:14px}.service-list p{margin:0;color:var(--ink-soft)}
+.service-deliverables{margin:0;padding-left:20px}.service-deliverables li{padding-bottom:8px}.service-deliverables li:last-child{padding-bottom:0}
+.service-example{display:grid;grid-template-columns:1fr 1fr;gap:24px}.example-panel{border:1.5px solid var(--ink);padding:26px}.example-panel.after{background:var(--azure)}
+.example-panel h3{font-size:28px;margin:10px 0 16px}.example-panel p{margin:0}.example-label{font:400 13px/1.4 var(--typed);text-transform:uppercase;letter-spacing:.08em;color:var(--ink-soft)}
+.example-route{font-size:18px;font-weight:600;margin-bottom:12px!important}.service-caption{font-size:14px;color:var(--ink-soft);margin-top:16px;max-width:65em}
+.service-process{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:28px}.service-process li{border-top:3px solid var(--blue);padding-top:20px}.service-process h3{font-size:26px;margin:12px 0}.service-process p{color:var(--ink-soft);margin:0}
+.service-proof{border:1.5px solid var(--ink);padding:32px;background:var(--sheet)}.service-proof h2{font-size:38px;margin-bottom:16px}.service-proof p{max-width:60em}.proof-links{display:flex;flex-wrap:wrap;gap:12px 28px;font-weight:600}
+.service-faq{border-top:1px solid var(--rule)}.service-faq details{border-bottom:1px solid var(--rule);padding:20px 0}.service-faq summary{font-size:19px;font-weight:700;cursor:pointer}.service-faq p{max-width:60em;margin:14px 0 0;color:var(--ink-soft)}
+.service-contact{padding:36px;background:var(--azure);border:1.5px solid var(--ink);display:grid;grid-template-columns:1fr 1fr;gap:32px}.service-contact h2{font-size:42px;margin-bottom:18px}.service-contact p{max-width:32em}.service-contact .contact-mail{font-size:clamp(25px,3vw,38px);overflow-wrap:anywhere}.service-contact ul{padding-left:20px}.service-contact .actions{gap:10px}.copy-status{font-size:14px;margin:12px 0 0;min-height:1.5em}
+.home-services{border:1.5px solid var(--ink);padding:32px;background:var(--azure);display:grid;grid-template-columns:1fr 1fr;gap:24px 48px}.home-services h2{font-size:clamp(30px,4vw,46px);margin-bottom:18px}.home-services p{max-width:32em}.home-services ul{padding-left:20px;margin:0 0 24px}.home-services li{margin-bottom:9px}
+@media(max-width:780px){.service-hero{grid-template-columns:1fr;gap:36px;padding-top:44px}.brief-sheet{margin-right:12px}.service-list>li{grid-template-columns:40px 1fr;gap:18px}.service-deliverables{grid-column:2}.service-example,.service-process,.service-contact,.home-services{grid-template-columns:1fr}.service-strip{gap:10px 20px}.service-contact{padding:26px}.home-services{padding:24px}.service-proof{padding:24px}.service-process{gap:30px}}
+@media(max-width:560px){.hero .sheets{margin-right:64px}}
+@media(max-width:420px){.service-hero h1{font-size:45px}.service-list>li{grid-template-columns:28px 1fr;gap:14px}.service-list h3{font-size:29px}.service-contact .actions .btn{width:100%}.example-panel{padding:22px}.brief-sheet{padding:22px}}

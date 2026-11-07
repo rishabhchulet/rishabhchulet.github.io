@@ -2,7 +2,8 @@
 <!-- Every public page on creet.in. The thanks.html pages are left out: they carry noindex.
      itr-desk/ and dispatch-desk/ come from their own repositories but are served on this domain. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://creet.in/</loc></url>
+  <url><loc>https://creet.in/</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://creet.in/services/</loc><lastmod>2026-11-07</lastmod></url>
   <url><loc>https://creet.in/privacy.html</loc></url>
 
   <url><loc>https://creet.in/gstr2b/</loc></url>
