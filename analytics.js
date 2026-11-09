@@ -5,8 +5,9 @@
 // - Visitors in the EEA, the UK and Switzerland start with analytics storage denied: no cookies are
 //   set and Google receives only cookieless pings. Elsewhere the usual GA cookies are allowed.
 //   Advertising storage and ad personalisation are denied everywhere.
-// - Every query parameter except utm_* is removed from the address before Google's tag loads, so
-//   no payment reference or email (Dodo Payments' return to thanks.html) ever reaches Google.
+// - Every query parameter except utm_* and Google Ads' click IDs (gclid, gbraid, wbraid, gad_*) is
+//   removed from the address before Google's tag loads, so no payment reference or email
+//   (Dodo Payments' return to thanks.html) ever reaches Google.
 // - Links to the stores and marketplaces get utm_source=creet.in, utm_medium=website and
 //   utm_campaign=<product folder, or "home">, unless they already carry tags, so each store's own
 //   dashboard can tell which creet.in page sent the visit.
@@ -49,7 +50,10 @@
   // Query strings can carry personal or payment data, and Google's terms forbid sending personal data
   // to Analytics. The tag reads the address bar for every hit, so the parameters are removed from the
   // address itself. No page on creet.in reads them (Dispatch Desk reads only utm_*).
-  var KEEP = /^utm_(source|medium|campaign|content|term)$/;
+  // Kept: campaign tags, and the click IDs Google Ads adds to ad clicks (gclid, gbraid, wbraid,
+  // gad_source, gad_campaignid). They identify the ad click, not the person, and Google Ads needs
+  // them to credit a store_click to the ad that brought the visitor.
+  var KEEP = /^(utm_(source|medium|campaign|content|term)|gclid|gbraid|wbraid|gad_source|gad_campaignid)$/;
   try {
     var here = new URL(location.href), drop = [];
     here.searchParams.forEach(function (v, k) { if (!KEEP.test(k)) drop.push(k); });
