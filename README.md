@@ -6,7 +6,7 @@ deploys it.
 
 | Path | What it is |
 |---|---|
-| `index.html`, `icon.svg` | Home page listing the seven products with their status, and the Creet icon. ITR Desk and Dispatch Desk link their Chrome Web Store, Edge Add-ons (published 3 Nov 2026) and Firefox Add-ons (approved 2 Nov 2026) listings. Media Tag Manager (free Wix App Market app, `https://www.wix.com/app-market/creet-media-tag-manager`) has no page of its own here: its sheet and footer link go to the listing, and its privacy policy is hosted on Wix |
+| `index.html`, `icon.svg` | Home page listing the eight products with their status, and the Creet icon. ITR Desk and Dispatch Desk link their Chrome Web Store, Edge Add-ons (published 3 Nov 2026) and Firefox Add-ons (approved 2 Nov 2026) listings. Portal Request View Plus (Jira Service Management Forge app, live on the Atlassian Marketplace since 10 Nov 2026: `https://marketplace.atlassian.com/apps/3056940292/portal-request-view-plus-for-jira-service-management`) has its pages in the separate `portal-request-view` repository, served at `portal-request-view/`; it has a sheet and footer link but no hero form field. Media Tag Manager (free Wix App Market app, `https://www.wix.com/app-market/creet-media-tag-manager`) has no page of its own here: its sheet and footer link go to the listing, and its privacy policy is hosted on Wix |
 | `styles.css` | Shared stylesheet for every page, including `gstr2b/` (linked as `../styles.css`) |
 | `gstr2b/` | GSTR-2B Reconciler: home, privacy, terms, refunds, post-purchase page |
 | `gstr2b/guide.html` | SEO guide, "How to reconcile GSTR-2B with the purchase register in Google Sheets": the portal download, the Tally/Busy/Zoho export, the import settings and what to do with each result tab, ending at the Marketplace listing. Add-on facts follow the add-on's README; keep them in step |
@@ -82,11 +82,11 @@ URLs for the Google OAuth consent screen and the Marketplace listing:
 
 The look is a stack of carbon-copy forms. Navy print (`--ink`), entries typed in blue
 (`--blue`, Courier Prime) and one carbon colour per tool: yellow for GSTR-2B Reconciler, pink
-for ITR Desk, green for Dispatch Desk, teal for Resource Lens, azure (Wix blue, `--azure`) for Returns Portal, kraft (parcel-box brown, `--kraft`) for Pickup Points for Packeta, lilac (`--lilac`) for Media Tag Manager. Headings are Archivo at a condensed width (`font-stretch`),
+for ITR Desk, green for Dispatch Desk, teal for Resource Lens, azure (Wix blue, `--azure`) for Returns Portal, kraft (parcel-box brown, `--kraft`) for Pickup Points for Packeta, lilac (`--lilac`) for Media Tag Manager, indigo (`--indigo`, the same values as `portal-request-view/prv.css`) for Portal Request View Plus. Headings are Archivo at a condensed width (`font-stretch`),
 loaded from Google Fonts. Every colour is a token at the top of `styles.css`, with a dark
 ("carbon paper") set under `prefers-color-scheme: dark`. The only motion is the hero form
 typing itself in and being stamped; it is off for `prefers-reduced-motion`.
 
 ## Services - 7 November 2026
 
-`services/` describes website repairs, business websites and workflow automation, with `support@creet.in` as the enquiry address. The homepage links the services alongside the existing seven products. Services use `services/services.css` plus shared theme styles; `services/contact.js` only copies the public email address. There is no enquiry form backend, checkout or automatic email send. Scope, fee and delivery are agreed per project. The contact example is explicitly illustrative.
+`services/` describes website repairs, business websites and workflow automation, with `support@creet.in` as the enquiry address. The homepage links the services alongside the existing products. Services use `services/services.css` plus shared theme styles; `services/contact.js` only copies the public email address. There is no enquiry form backend, checkout or automatic email send. Scope, fee and delivery are agreed per project. The contact example is explicitly illustrative.
