@@ -353,6 +353,7 @@ td code{display:inline-block;margin-top:4px;font-weight:400;color:var(--ink-soft
 .cta-sheet h2{font-size:clamp(30px,3.6vw,44px);margin-bottom:12px}
 .cta-sheet p{margin:0;max-width:36em;color:var(--ink)}
 .cta-sheet .actions{justify-content:flex-end}
+.cta-sheet.cta-lilac{background:var(--lilac)} /* media-tag-manager guide */
 
 /* Responsive */
 @media (max-width:960px){

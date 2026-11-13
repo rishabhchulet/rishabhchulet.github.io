@@ -2,7 +2,7 @@
 <!-- Every public page on creet.in. The thanks.html pages are left out: they carry noindex.
      itr-desk/, dispatch-desk/ and portal-request-view/ come from their own repositories but are served on this domain. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://creet.in/</loc><lastmod>2026-11-13</lastmod></url>
+  <url><loc>https://creet.in/</loc><lastmod>2026-11-14</lastmod></url>
   <url><loc>https://creet.in/services/</loc><lastmod>2026-11-07</lastmod></url>
   <url><loc>https://creet.in/privacy.html</loc></url>
 
@@ -40,4 +40,6 @@
   <url><loc>https://creet.in/pickup-points-for-packeta/</loc></url>
   <url><loc>https://creet.in/pickup-points-for-packeta/privacy</loc></url>
   <url><loc>https://creet.in/pickup-points-for-packeta/terms</loc></url>
+
+  <url><loc>https://creet.in/media-tag-manager/remove-auto-generated-tags.html</loc><lastmod>2026-11-14</lastmod></url>
 </urlset>
