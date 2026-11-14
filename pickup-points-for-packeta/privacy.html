@@ -36,7 +36,7 @@
 <article class="legal">
 
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: 6 November 2026</p>
+  <p class="updated">Last updated: 14 November 2026</p>
 
   <p>This policy explains what data the Wix app "Pickup Points for Packeta" (the "app") processes and why. The app is made by Creet (<a href="../">creet.in</a>), an individual developer in India. Contact: <a href="mailto:support@creet.in">support@creet.in</a>.</p>
   <p>The app is not affiliated with or endorsed by Packeta (Zásilkovna s.r.o.).</p>
@@ -68,17 +68,24 @@
     <li>For these orders: the recipient's first and last name, email, phone number and company, the order number, the order value and currency, any cash-on-delivery amount, the parcel weight and the chosen pickup point.</li>
     <li>Wix sends the order to the app when you check or create a packet, or when an order is approved if automatic creation is on. The app uses only the fields above.</li>
   </ul>
+  <h3>Usage log</h3>
+  <ul>
+    <li>When you save the app's settings, when an order shipped with one of the app's Packeta options is approved, and when a packet is created, the app sends Creet a short note: your site's Wix ID, name and web address, the app's ID for your site, the time, and which of the three it was.</li>
+    <li>With it go only: for a settings save, whether an API key and an API password are saved, whether automatic creation is on, and your destination countries; for an order, the pickup point's country; for a packet, whether it was created by hand or automatically.</li>
+    <li>It never includes shopper data, order numbers, packet numbers or barcodes, or your API key or password.</li>
+  </ul>
 
   <h2>How the data is used</h2>
-  <p>To show Packeta pickup points as delivery options, to check the shopper's choice and record it on the order, and to create the Packeta packet for an order, print its label and add tracking to the order. We do not sell data. We do not use it for advertising.</p>
+  <p>To show Packeta pickup points as delivery options, to check the shopper's choice and record it on the order, and to create the Packeta packet for an order, print its label and add tracking to the order. The usage log tells us which stores use the app, so we can support them and report the number of active stores to Packeta. We do not sell data. We do not use it for advertising.</p>
 
   <h2>Where the data is stored</h2>
   <ul>
-    <li>The app runs on Wix's own app hosting. Creet has no server and no separate database.</li>
+    <li>The app runs on Wix's own app hosting. Creet has no server of its own.</li>
     <li>Your API key, API password and settings are stored on your own Wix site, in a collection that only site admins and the app can read. The API password is stored as plain text.</li>
     <li>The chosen pickup point is stored on the Wix cart or order.</li>
     <li>When a packet is created, its packet number and barcode are saved on the order, and its tracking number is added to the order's fulfillment. Labels go straight to your browser; the app does not keep them.</li>
     <li>Wix may keep technical logs of the app's backend under Wix's own policies. The app's log lines name order and packet numbers, not shoppers.</li>
+    <li>The usage log is kept in a Google Sheet in Creet's Google account.</li>
   </ul>
 
   <h2>Who else receives data</h2>
@@ -87,14 +94,16 @@
     <li><strong>Packeta.</strong> The app calls Packeta's public APIs with your API key: the pickup-point list (with the destination country) and the check of the chosen point (with that point). If you add the checkout map, Packeta's map loads from Packeta in the shopper's browser, and what the shopper does in it is handled by Packeta under Packeta's own privacy policy.</li>
     <li><strong>Packeta, for packets.</strong> Packeta receives the order data listed above when you check a packet's data or a packet is created, either when you click Create packet or automatically if you turn that on. Packeta handles it as your carrier under your contract with Packeta. Labels are fetched from Packeta.</li>
     <li><strong>Shoppers' browsers.</strong> The checkout map needs your API key, so the app sends the key, your countries and your Z-BOX setting to the storefront. The API password is never sent there.</li>
+    <li><strong>Google</strong> stores the usage log for us, under Google's terms.</li>
   </ul>
-  <p>We share data with no one else.</p>
+  <p>Packeta may learn from us how many stores use the app; we name a store to Packeta only with that store's consent. We share data with no one else.</p>
 
   <h2>How long it is kept</h2>
   <ul>
     <li>Your settings stay on your site until you change them or the app's data is removed. If you uninstall the app, you can ask us to help remove its settings from your site; contact <a href="mailto:support@creet.in">support@creet.in</a>.</li>
     <li>The chosen pickup point, the packet number and barcode, and the tracking number stay on the order as part of your order records.</li>
     <li>Packeta keeps packet data under its own policies and your contract with Packeta.</li>
+    <li>The usage log is kept for up to 24 months. To have your store's entries removed sooner, email <a href="mailto:support@creet.in">support@creet.in</a>.</li>
   </ul>
 
   <h2>Security</h2>
