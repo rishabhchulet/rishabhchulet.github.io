@@ -3,9 +3,11 @@
 // ("Website privacy").
 //
 // - Runs only on creet.in: local previews and the github.io addresses send nothing.
-// - Visitors in the EEA, the UK and Switzerland start with analytics storage denied: no cookies are
-//   set and Google receives only cookieless pings. Elsewhere the usual GA cookies are allowed.
-//   Advertising storage and ad personalisation are denied everywhere.
+// - Visitors in the EEA, the UK and Switzerland start with analytics and advertising storage denied:
+//   no cookies are set and Google receives only cookieless pings. Elsewhere the usual GA cookies are
+//   allowed, and so are ad storage and ad user data, so Google Ads can credit a store_click to the
+//   ad that brought the visitor (see the consent block below). Ad personalisation (remarketing,
+//   interest-based ads) is denied everywhere.
 // - Every query parameter except utm_* and Google Ads' click IDs (gclid, gbraid, wbraid, gad_*) is
 //   removed from the address before Google's tag loads, so no payment reference or email
 //   (Dodo Payments' return to thanks.html) ever reaches Google.
@@ -75,15 +77,20 @@
   var EEA_UK_CH = ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE',
     'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO',
     'GB', 'CH'];
+  // The site has no consent banner, so the EEA/UK/CH default stays denied for good. Elsewhere,
+  // ad_storage and ad_user_data are granted: Google Ads imports store_click from GA4, and with
+  // ad_user_data denied that export is limited (Google's consent mode reference), so the ads showed
+  // 0 conversions while GA4 recorded store clicks from them (17 Nov 2026). ad_personalization stays
+  // denied, so the data is used to measure our own ads, not for remarketing or interest-based ads.
   gtag('consent', 'default', {
     ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
     analytics_storage: 'denied', region: EEA_UK_CH
   });
   gtag('consent', 'default', {
-    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'denied',
     analytics_storage: 'granted'
   });
-  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'ads_data_redaction', true); // only acts where ad_storage is denied (EEA/UK/CH)
   gtag('js', new Date());
   gtag('config', ID, { allow_google_signals: false, allow_ad_personalization_signals: false });
 
