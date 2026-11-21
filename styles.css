@@ -245,6 +245,29 @@ code{font-family:var(--typed);font-size:.92em;overflow-wrap:anywhere}
 .gsheet figcaption{margin-top:22px;font-size:14px;color:var(--ink-soft)}
 .gsheet figcaption .sw{vertical-align:-1px;margin:0 4px 0 0}
 
+/* A tighter hero (gstr2b/index.html), so the install button stays on the first screen of a laptop */
+.hero-compact{padding-top:48px}
+.hero-compact h1{font-size:clamp(36px,4vw,50px);margin-bottom:20px}
+.hero-compact .lead{margin-bottom:26px}
+.nobr{white-space:nowrap}
+/* Short points under the hero buttons */
+.hero-points{max-width:34em;margin:28px 0 0;padding:0;list-style:none;font-size:15px;color:var(--ink-soft)}
+.hero-points li{position:relative;margin:8px 0 0;padding-left:26px}
+.hero-points li::before{content:"";position:absolute;left:2px;top:.38em;width:13px;height:7px;border-left:2.5px solid var(--blue);border-bottom:2.5px solid var(--blue);transform:rotate(-45deg)}
+.hero-points b{color:var(--ink);font-weight:700}
+/* Screenshots of the add-on (gstr2b/img/): the listing images from the add-on's repository.
+   They are captures of Google Sheets in its light theme, so the frame stays white in dark mode. */
+.gsheet-shot{display:block;background:#fff}
+.gsheet-shot img{width:100%;height:auto}
+.screens{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:44px 40px;margin:0;padding:0;list-style:none}
+.screens li{min-width:0}
+.screen{margin:0}
+.screen a{display:block;border:1.5px solid var(--ink);border-radius:4px;overflow:hidden;background:#fff;box-shadow:8px 8px 0 var(--copy-yellow)}
+.screen img{width:100%;height:auto}
+.screen figcaption{margin-top:20px}
+.screen figcaption b{display:block;margin-bottom:2px;color:var(--ink);font-size:17px;font-weight:700}
+.screen figcaption span{display:block;max-width:34em;color:var(--ink-soft);font-size:15px}
+
 /* Feature list as a form: name on the left, detail on the right */
 .spec{margin:0;border-top:1.5px solid var(--ink)}
 .spec > div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px 48px;padding:22px 0;border-bottom:1px solid var(--rule)}
@@ -370,6 +393,7 @@ td code{display:inline-block;margin-top:4px;font-weight:400;color:var(--ink-soft
   .checks li:first-child,.steps li:first-child{border-top:0}
   .spec > div{grid-template-columns:minmax(0,1fr)}
   .plans,.faq{grid-template-columns:minmax(0,1fr)}
+  .screens{grid-template-columns:minmax(0,1fr);max-width:640px;gap:36px}
   .qa:nth-child(2){border-top:1px solid var(--rule)}
   .walk > li,.cta-sheet{grid-template-columns:minmax(0,1fr)}
   .cta-sheet .actions{justify-content:flex-start}

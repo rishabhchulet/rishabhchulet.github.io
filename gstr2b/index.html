@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script>try{var t=localStorage.getItem('creet-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
-<title>GSTR-2B Reconciler – GSTR-2B reconciliation in Google Sheets</title>
-<meta name="description" content="A Google Sheets add-on for chartered accountants and GST practitioners in India. Reconcile the GST portal's GSTR-2B with a client's purchase register and see matched, mismatched and missing invoices and claimable ITC by supplier GSTIN. Your data stays in your spreadsheet.">
+<title>GSTR-2B Reconciler – GSTR-2B reconciliation in Google Sheets for your Excel files</title>
+<meta name="description" content="A Google Sheets add-on for chartered accountants and GST practitioners in India. Import the GSTR-2B Excel from the GST portal and the client's Excel purchase register, click Reconcile, and see matched, mismatched and missing invoices and claimable ITC by supplier GSTIN. No macros, no VLOOKUP. Your data stays in your spreadsheet.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://creet.in/gstr2b/">
-<meta property="og:title" content="GSTR-2B Reconciler – GSTR-2B reconciliation in Google Sheets">
-<meta property="og:description" content="Reconcile GSTR-2B with the purchase register, inside Google Sheets.">
+<meta property="og:title" content="GSTR-2B Reconciler – GSTR-2B reconciliation in Google Sheets for your Excel files">
+<meta property="og:description" content="Reconcile GSTR-2B with your Excel purchase register, in Google Sheets. No macros, no VLOOKUP.">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#141832" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
@@ -30,6 +30,7 @@
       <a class="product" href="./"><img src="icon.svg" alt="" width="24" height="24">GSTR-2B Reconciler</a>
     </div>
     <nav class="site-nav" aria-label="Main">
+      <a href="#excel">From Excel</a>
       <a href="#features">Features</a>
       <a href="#pricing">Pricing</a>
       <a href="#data">Your data</a>
@@ -42,39 +43,42 @@
 </header>
 
 <main id="main">
-  <section class="product-hero wrap">
+  <section class="product-hero hero-compact wrap">
     <div>
-      <p class="kind"><span class="sw sw-yellow"></span>Google Sheets add-on for India</p>
-      <h1 class="ruled">Reconcile GSTR-2B with the purchase register, inside Google Sheets.</h1>
-      <p class="lead">GSTR-2B Reconciler is a Google Sheets add-on for chartered accountants and GST practitioners. Import the GSTR-2B Excel from the GST portal and the client's purchase register into one spreadsheet, click Reconcile, and get matched, mismatched and missing invoices with claimable ITC for every supplier GSTIN. No macros, no VBA, no Windows.</p>
+      <p class="kind"><span class="sw sw-yellow"></span>Google Sheets add-on for CAs and GST practitioners in India</p>
+      <h1 class="ruled">Reconcile <span class="nobr">GSTR-2B</span> with your Excel purchase register, in Google Sheets.</h1>
+      <p class="lead">Still matching 2B and books with VLOOKUP? Import the GSTR-2B Excel from the GST portal and your purchase register into a Google Sheet, click Reconcile, and see matched, mismatched and missing invoices with claimable ITC by supplier.</p>
       <p class="actions">
         <a class="btn btn-primary" id="installBtn" href="https://workspace.google.com/marketplace/app/gstr2b_reconciler/1005859264831">Get it for Google Sheets, free</a>
         <a class="btn" href="#pricing">See Pro</a>
       </p>
+      <ul class="hero-points">
+        <li><b>Your Excel files, as they are.</b> .xlsx or .csv from Tally, Busy, Zoho or your own format, imported into a Google Sheet.</li>
+        <li><b>Nothing to install on Windows.</b> No macros, no VBA, no VLOOKUP. It runs in the browser.</li>
+        <li><b>Free for up to 200 invoices a month.</b> Every matching rule and every result tab.</li>
+      </ul>
     </div>
 
     <figure class="gsheet">
-      <div class="gsheet-frame">
-        <div class="gsheet-bar"><b>Summary</b> amounts in ₹</div>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr><th>Supplier GSTIN</th><th class="num">As per 2B</th><th class="num">As per books</th><th class="num">Claimable</th></tr>
-            </thead>
-            <tbody>
-              <tr><td class="gstin">27AAPFU0939F1ZV</td><td class="num">1,24,560</td><td class="num">1,24,560</td><td class="num">1,24,560</td></tr>
-              <tr><td class="gstin">29AAACX1234B1Z5</td><td class="num">48,210</td><td class="num diff">52,900</td><td class="num">48,210</td></tr>
-              <tr><td class="gstin">07AAAPZ5678C1ZQ</td><td class="num miss">0</td><td class="num">18,000</td><td class="num">0</td></tr>
-            </tbody>
-            <tfoot>
-              <tr><td>Total</td><td class="num">1,72,770</td><td class="num">1,95,460</td><td class="num">1,72,770</td></tr>
-            </tfoot>
-          </table>
-        </div>
-        <div class="gsheet-tabs" aria-hidden="true"><span class="on">Summary</span><span>Matched</span><span>Mismatched</span><span>Missing in 2B</span><span>Missing in books</span><span>Recon history</span></div>
-      </div>
-      <figcaption>Example result with made-up figures. <span class="sw sw-yellow"></span>Value differs from the 2B. <span class="sw sw-pink"></span>Missing in 2B: hold the ITC.</figcaption>
+      <a class="gsheet-frame gsheet-shot" href="img/shot-2-result-panel.png" target="_blank" rel="noopener"><img src="img/shot-2-result-panel.png" width="1280" height="800" decoding="async" alt="GSTR-2B Reconciler open in Google Sheets after a run. The sidebar shows the result for Demo Client Pvt Ltd, September 2026: 12 matched, 5 mismatched, 3 in 2B but not in the books, 3 in the books but not in 2B, ITC you can claim now ₹1,17,060.54 and ITC on hold ₹25,110.00. Behind it is the Summary tab with the same counts and taxable values."></a>
+      <figcaption>A real run in Google Sheets on the add-on's built-in sample data: the result in the sidebar, the Summary tab behind it. Click to enlarge.</figcaption>
     </figure>
+  </section>
+
+  <section id="excel" class="section wrap">
+    <div class="section-head">
+      <h2>Coming from Excel?</h2>
+      <p>The add-on does not run inside Excel. It works on your Excel files once they are imported into a Google Sheet. Here is what that means for the way you work today.</p>
+    </div>
+    <div class="faq">
+      <div class="qa"><h3>Do I have to change how I keep my purchase register?</h3><p>No. Keep it in Excel, or export it from Tally, Busy or Zoho as you do now, with your own column names and order. The add-on finds the header row and suggests which column is which from the header text (Party GSTIN, Bill No, Supplier Invoice No and the like); you correct anything it missed in the sidebar. The mapping is saved in that client's spreadsheet, so next month is one click.</p></div>
+      <div class="qa"><h3>Does it work with my file?</h3><p>Yes, if it has one row per supplier invoice with the supplier GSTIN, the supplier's invoice number, the invoice date and the taxable value. Add the IGST, CGST, SGST/UTGST and cess columns to get the ITC figures and to catch tax under the wrong head. Total rows and unregistered purchases can stay: rows without a GSTIN or an invoice number are skipped and listed at the end of the Summary. The GSTR-2B Excel is used exactly as the GST portal gives it.</p></div>
+      <div class="qa"><h3>How do my Excel files get in?</h3><p>In a Google Sheet, choose File → Import → Upload, pick the .xlsx or .csv file and set Import location to Insert new sheet(s). The 2B arrives with each table on its own tab (B2B, B2B-CDNR and so on); the purchase register becomes one more tab. The add-on then reads those tabs. The files on your computer are not touched.</p></div>
+      <div class="qa"><h3>Is my data uploaded anywhere?</h3><p>Importing copies the file's contents into a Google Sheet in your own Google Drive, under your Google account. The add-on has no server of its own: it runs inside Google Sheets, can read only the spreadsheet it is opened in, and sends nothing from your sheet anywhere. The single outside call is the Pro licence check, which carries the licence key and no spreadsheet data. <a href="#data">Your data and permissions</a>.</p></div>
+      <div class="qa"><h3>Do I need to install anything or enable macros?</h3><p>No. There is nothing to install on Windows, no macro to enable and no VBA. The add-on is added to Google Sheets from the Google Workspace Marketplace and runs in the browser, on any computer. You need a Google account.</p></div>
+      <div class="qa"><h3>Can I take the result back to Excel?</h3><p>Yes. The result tabs (Summary, Matched, Mismatched, Missing in 2B, Missing in books, Follow-ups, Recon history) hold plain values, not formulas. File → Download → Microsoft Excel (.xlsx) in Google Sheets saves the whole spreadsheet as an Excel file for your working papers.</p></div>
+    </div>
+    <p class="note" style="margin-top:28px">Want to see it before you bring a client's file? Click "Try with sample data" in the sidebar. It adds two tabs of made-up invoices, and runs on them are not counted against the free plan.</p>
   </section>
 
   <section id="features" class="section wrap">
@@ -98,11 +102,44 @@
     </div>
     <ol class="steps">
       <li><h3>Import the 2B</h3><p>Download the GSTR-2B Excel from the GST portal and import it into a Google Sheet (File → Import → Insert new sheet(s)).</p></li>
-      <li><h3>Add the purchase register</h3><p>From Tally, Busy, Zoho or your own format, as another tab in the same spreadsheet.</p></li>
+      <li><h3>Add the purchase register</h3><p>Your Excel or CSV register from Tally, Busy, Zoho or your own format, imported the same way as another tab in the same spreadsheet.</p></li>
       <li><h3>Reconcile</h3><p>Extensions → GSTR-2B Reconciler → Reconcile GSTR-2B. Confirm the columns in the sidebar and click Reconcile. The result tabs are written into the same spreadsheet.</p></li>
     </ol>
     <p class="note">The add-on writes seven tabs: Summary, Matched, Mismatched, Missing in 2B, Missing in books, Follow-ups and Recon history. Each run replaces the add-on's own result tabs; your source tabs are never changed.</p>
     <p class="note">New to 2B reconciliation? <a href="guide.html">How to reconcile GSTR-2B with the purchase register in Google Sheets</a> walks through downloading the 2B, exporting the register from Tally, Busy or Zoho, and what to do with every result tab.</p>
+  </section>
+
+  <section id="screens" class="section wrap">
+    <div class="section-head">
+      <h2>What it looks like</h2>
+      <p>Screenshots of the add-on in Google Sheets, taken on its built-in sample data (made-up suppliers and amounts). Click one to see it full size.</p>
+    </div>
+    <ul class="screens">
+      <li>
+        <figure class="screen">
+          <a href="img/shot-1-sidebar-setup.png" target="_blank" rel="noopener"><img src="img/shot-1-sidebar-setup.png" width="1280" height="800" loading="lazy" decoding="async" alt="The add-on's sidebar next to an imported GSTR-2B B2B tab in Google Sheets. Step 1, GSTR-2B data, has the B2B tab ticked: 20 rows, header rows 5 to 6. Step 2, Purchase register, has the Purchase register tab chosen: 21 rows, header row 5."></a>
+          <figcaption><b>Pick the tabs</b><span>The imported 2B and the purchase register, with the header rows found for you. The portal's two-row header is read as it is.</span></figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure class="screen">
+          <a href="img/shot-3-summary.png" target="_blank" rel="noopener"><img src="img/shot-3-summary.png" width="1280" height="800" loading="lazy" decoding="async" alt="The Summary tab: documents, taxable value, IGST, CGST and SGST/UTGST for matched exactly, matched (fuzzy), mismatched, in 2B missing in books and in books missing in 2B; then ITC available as per 2B, ITC as per books and claimable now; then the start of ITC by supplier GSTIN."></a>
+          <figcaption><b>Summary</b><span>Counts and head-wise tax for every category, ITC as per 2B and as per books, claimable ITC, and ITC by supplier GSTIN.</span></figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure class="screen">
+          <a href="img/shot-4-mismatched.png" target="_blank" rel="noopener"><img src="img/shot-4-mismatched.png" width="1280" height="800" loading="lazy" decoding="async" alt="The Mismatched tab with five invoices and the reason for each: tax head differs (2B has IGST, books have CGST + SGST), tax differs by ₹3300.00, taxable value differs by ₹1000.00, date differs by 18 days, and GSTIN differs."></a>
+          <figcaption><b>Mismatched, with the reason</b><span>The same invoice with a different value, date, tax, tax head or GSTIN. Some columns are hidden in this shot so the reasons fit.</span></figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure class="screen">
+          <a href="img/shot-5-follow-ups.png" target="_blank" rel="noopener"><img src="img/shot-5-follow-ups.png" width="1280" height="800" loading="lazy" decoding="async" alt="The Follow-ups tab: one row per supplier with the ITC on hold and a message to the supplier, shown in full in the formula bar, asking them to report the missing invoice in their GSTR-1 or IFF."></a>
+          <figcaption><b>Supplier follow-ups</b><span>One row per supplier whose invoices are missing in 2B, with the ITC on hold and a message ready to paste into email or WhatsApp.</span></figcaption>
+        </figure>
+      </li>
+    </ul>
   </section>
 
   <section id="pricing" class="section wrap">
@@ -191,7 +228,7 @@
       <a href="refunds.html">Refunds</a>
       <a id="mail" href="mailto:support@creet.in">support@creet.in</a>
     </nav>
-    <p class="fine">Google Sheets™ and Google Workspace™ are trademarks of Google LLC. This add-on is not made or endorsed by Google.</p>
+    <p class="fine">Google Sheets™ and Google Workspace™ are trademarks of Google LLC. Microsoft Excel is a trademark of the Microsoft group of companies. This add-on is not made or endorsed by Google or Microsoft.</p>
   </div>
 </footer>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
